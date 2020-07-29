@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LoginButton from "./components/LoginButton";
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
+        <LoginButton />
       </header>
     </div>
   );
