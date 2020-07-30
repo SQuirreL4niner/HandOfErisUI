@@ -14,13 +14,13 @@ pool:
   vmthumbnail: ../"ubuntu-latest"
 
 steps:
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo Replace Index.html
-      pushd $(uiSource)/public
-      mv index.release.html index.html
-      popd
+  - task: CmdLine@2
+    inputs:
+      script: |
+        echo Replace Index.html
+        pushd $(uiSource)/public
+        mv index.release.html index.html
+        popd
       
   - task: NodeTool@0
     inputs:
