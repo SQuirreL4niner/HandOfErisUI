@@ -29,7 +29,7 @@ steps:
   - task: ArchiveFiles@2
     displayName: Archive
     inputs:
-      rootFolderOrFile: "build"
+      rootFolderOrFile: "$(uiBuild)"
       includeRootFolder: false
       archiveType: "zip"
       archiveFile: "$(Build.ArtifactStagingDirectory)/ui-$(Build.BuildId).zip"
