@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Highlight } from "../components";
+import config from '../config'
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -26,6 +27,8 @@ const Profile = () => {
       <Row>
         <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
       </Row>
+        <br/>
+        {config.title}
     </Container>
   );
 };
