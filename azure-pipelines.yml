@@ -42,7 +42,7 @@ steps:
     archiveFile: "$(Build.ArtifactStagingDirectory)/ui-$(Build.BuildId).zip"
     replaceExistingArchive: true
 
--task: PublishBuildArtifacts@1
+- task: PublishBuildArtifacts@1
   input:
     Contents: 'build/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
