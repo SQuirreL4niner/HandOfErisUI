@@ -51,4 +51,4 @@ steps:
   displayName: Publish Artifacts
   inputs:
     PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-    ArtifactName: "www"
+    ArtifactName: "drop"
