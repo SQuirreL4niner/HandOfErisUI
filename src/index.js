@@ -14,19 +14,29 @@ import Profile from "./pages/profile";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import {Auth0Provider} from "@auth0/auth0-react";
+import Login from "./assets/auth/authentication/login";
+import Logout from "./assets/auth/authentication/logout";
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 const redirectUri = `${window.location.origin}/callback`;
-
+console.log(domain);
 function App() {
     return (
-        <Auth0Provider domain={domain} clientId={clientId} redirectUri={redirectUri}>
+        <Auth0Provider
+            domain={domain}
+            clientId={clientId}
+            redirectUri={window.location.origin}
+            audience={'https://info.handoferis.us'}
+            scope="read:messages read:music upload:dawfile upload:music"
+        >
         <div className="app" className="d-flex flex-column h-100">
             <Container className="flex-grow-1 mt-5">
-                <Auth>
+                {/*<Auth>*/}
                     <Router>
                         <Navbar/>
+                        {/*<Login/>*/}
+                        {/*<Logout/>*/}
                         <Switch>
                             <Route exact path="/" component={HomePage}/>
                             <Route path="/callback" component={Callback}/>
@@ -36,7 +46,7 @@ function App() {
                         </Switch>
                     </Router>
                     <Footer/>
-                </Auth>
+                {/*</Auth>*/}
             </Container>
         </div>
         </Auth0Provider>

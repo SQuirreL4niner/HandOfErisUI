@@ -2,6 +2,8 @@ import React, {useState, useEffect, useContext} from "react";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
+import PropTypes from 'prop-types';
+
 import axios from "axios";
 import { AuthConsumer } from "../auth/authentication/auth-context"
 import rules from "../auth/authorization/rbac-rules";
@@ -12,83 +14,99 @@ const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 const redirectUri = `${window.location.origin}/callback`;
 const api = process.env.REACT_APP_API_URL;
 const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+
+const ExtraPropTypes = require('react-extra-prop-types');
+
 //const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 //const [userMetadata, setUserMetadata] = useState(null);
 
 const BandMedia = () => {
 
-    const { user } = useContext(AuthConsumer);
-    const { getAccessTokenSilently } = useAuth0();
-    const [data, setData, userMetadata, setUserMetadata] = useState({rehearsalJams: []});
+    //const { user } = useContext(AuthConsumer);
+    const { user, getAccessTokenSilently } = useAuth0();
+    //const [userMetadata, setUserMetadata] = useState(null);
+    const [data, setData, userMetadata, setUserMetadata] = useState(0);
 
-    useEffect(async () => {
+    //const data = {};
 
-        const getUserMetadata = async () => {
+    useEffect( () => {
+
+        (async () => {
 
             try {
+
+                console.log(rules[user[process.env.REACT_APP_AUTH0_ROLE_URL]].static.join().replace(/[/,\r]/gm, " "))
+
+                // for(const v in rules[user[process.env.REACT_APP_AUTH0_ROLE_URL]].static) =>
+                // {
+                //
+                // }
                 const accessToken = await getAccessTokenSilently({
-                    audience: audience,
-                    scope: 'read:messages'
+                    audience: 'https://info.handoferis.us',
+
+                    scope: 'upload:music'
                 });
 
-                const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+                console.log('access token');
+                console.log(accessToken)
 
-                const metadataResponse = await fetch(userDetailsByIdUrl, {
+                const options = {
                     headers: {
-                        Authorization: `Bearer ${user.token}`
+                        'Authorization': `Bearer ${accessToken}`
                     }
-                });
+                }
 
-                const { user_metadata } = await metadataResponse.json();
+                const result = await axios.get(
+                    api + '/retrievesongs',
+                    options
+                );
 
-                console.log('metadata response ');
-                console.log(user_metadata);
+                console.log(result.data);
+                //data = result.data;
 
-                setUserMetadata(user_metadata);
+                setData(result.data)
+
+                console.log(data);
+
+                //setUserMetadata(user_metadata);
             } catch (e) {
+                console.log('trouble in paradise')
                 console.log(e.message);
             }
 
-        }
+            //await getUserMetadata();
 
-        await getUserMetadata();
-
-        console.log(user);
-        let scopes = rules[user.role].static;
-        console.log(scopes);
-
-        const options = {
-            headers: {
-                'Scope': scopes,
-                'Authorization': user.token
-            }
-        }
-        const result = await axios.get(
-            api + '/retrievesongs',
-            options
-        );
-
-        setData(result.data)
-    }, []);
+        })();
+    },[setData]);
 
     return (
+        data ? (
         <ul>
-            {data.rehearsalJams.map(item => (
+            {data.map(item => (
                 <ul>
-                <li key={item.objectID}>
+                <li key={item.id}>
+                    {item.title}<br/>
                     <audio controls>
-                        <source src={item.url} type="audio/mpeg">
-                            {item.name}
+                        <source src={item.track} type="audio/mpeg">
+                            {/*{item.title}*/}
                         </source>
-                        <source src={item.url} type="audio/ogg">
-                            {item.name}
+                        <source src={item.track} type="audio/ogg">
+                            {/*{item.title}*/}
                         </source>
                     </audio>
+                    <br/>
                 </li>
                 </ul>
             ))}
         </ul>
+        ) : <div> hello no data</div>
     )
 }
 
+BandMedia.propTypes = {
+    id: ExtraPropTypes.uuid,
+    title: PropTypes.string,
+    track: PropTypes.string
+
+}
 export default BandMedia;
