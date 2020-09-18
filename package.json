@@ -10,7 +10,6 @@
     "auth0-js": "^9.13.4",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
-    "env-cmd": "^10.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
     "prettier": "^2.1.0",
