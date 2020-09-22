@@ -52,5 +52,6 @@
   },
   "prettier": {
     "singleQuote": true
-  }
+  },
+  "proxy": "https://info.handoferis.us"
 }
