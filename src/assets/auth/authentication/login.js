@@ -9,7 +9,7 @@ function Login() {
 
     const {
         isAuthenticated,
-        loginWithRedirect
+        loginWithRedirect,
     } = useAuth0();
 
     // <AuthConsumer>

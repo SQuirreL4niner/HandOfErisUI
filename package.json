@@ -52,6 +52,5 @@
   },
   "prettier": {
     "singleQuote": true
-  },
-  "proxy": "dev-3c9hn7ky.us.auth0.com"
+  }
 }
