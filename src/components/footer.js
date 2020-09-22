@@ -9,7 +9,7 @@ const Footer = () => (
   <footer className="bg-light p-3 text-center">
       <img className="mb-3 metal-logo" src={metal} alt="metal" width="25" />
     <p>
-        Made with Metal
+        Made with Metal {test}
     </p>
   </footer>
 );
