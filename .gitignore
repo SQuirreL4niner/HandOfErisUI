@@ -15,7 +15,7 @@
 .DS_Store
 .env
 .env.development
-.env.production
+src/.env.production
 /src/build
 /src/dist
 
