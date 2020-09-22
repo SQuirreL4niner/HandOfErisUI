@@ -53,5 +53,5 @@
   "prettier": {
     "singleQuote": true
   },
-  "proxy": "https://info.handoferis.us"
+  "proxy": "dev-3c9hn7ky.us.auth0.com"
 }
