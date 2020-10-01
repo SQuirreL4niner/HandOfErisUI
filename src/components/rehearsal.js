@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Progress} from 'reactstrap';
 import {ToastContainer, toast} from 'react-toastify';
-import {AuthConsumer} from "../assets/auth/authentication/auth-context";
+import {AuthConsumer} from "../assets/auth/authentication/user-context";
 import 'react-toastify/dist/ReactToastify.css';
 import RehearsalContent from "../components/rehearsal-content";
 import Can from "../assets/auth/authorization/can";

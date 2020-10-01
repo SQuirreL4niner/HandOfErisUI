@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
 
-import {AuthConsumer} from "../assets/auth/authentication/auth-context";
+import {AuthConsumer} from "../assets/auth/authentication/user-context";
 
 import Login from '../assets/auth/authentication/login';
 import BandLogo from "../components/band-logo";

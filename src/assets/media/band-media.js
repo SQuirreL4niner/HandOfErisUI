@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import PropTypes from 'prop-types';
 
 import axios from "axios";
-import { AuthConsumer } from "../auth/authentication/auth-context"
+import { AuthConsumer } from "../auth/authentication/user-context"
 import rules from "../auth/authorization/rbac-rules";
 import Auth from "../auth/authentication/auth";
 
@@ -16,7 +16,6 @@ const api = process.env.REACT_APP_API_URL;
 const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
 const ExtraPropTypes = require('react-extra-prop-types');
-
 //const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 //const [userMetadata, setUserMetadata] = useState(null);
 
@@ -42,7 +41,7 @@ const BandMedia = () => {
                 //
                 // }
                 const accessToken = await getAccessTokenSilently({
-                    audience: 'https://info.handoferis.us',
+                    audience: audience,
 
                     scope: 'upload:music'
                 });
@@ -57,7 +56,7 @@ const BandMedia = () => {
                 }
 
                 const result = await axios.get(
-                    api + '/retrievesongs',
+                    api + '/admin/retrievesongs',
                     options
                 );
 

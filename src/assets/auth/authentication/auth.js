@@ -11,7 +11,7 @@
 // const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 // const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 // const redirectUri = `${window.location.origin}/callback`;
-//
+
 // const { user, getAccessTokenSilently } = useAuth0();
 //
 // const Auth = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AuthConsumer } from "./auth-context";
+import { AuthConsumer } from "./user-context";
 import {Link, Redirect} from "react-router-dom";
 import {useAuth0} from "@auth0/auth0-react";
 
