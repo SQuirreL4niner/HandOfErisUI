@@ -48,38 +48,6 @@ const Navbar = () => {
           >
             Upload
           </Nav.Link>
-          <Nav.Link
-            as={RouterNavLink}
-            to="/profile"
-            exact
-            activeClassName="router-link-exact-active"
-          >
-            Upload Jam
-          </Nav.Link>
-          <Nav.Link
-            as={RouterNavLink}
-            to="/profile"
-            exact
-            activeClassName="router-link-exact-active"
-          >
-            Upload DAW
-          </Nav.Link>
-          <Nav.Link
-            as={RouterNavLink}
-            to="/profile"
-            exact
-            activeClassName="router-link-exact-active"
-          >
-            Upload Samples
-          </Nav.Link>
-          <Nav.Link
-            as={RouterNavLink}
-            to="/profile"
-            exact
-            activeClassName="router-link-exact-active"
-          >
-            Short Jams
-          </Nav.Link>
         </Nav>
       )}
       no={() => (

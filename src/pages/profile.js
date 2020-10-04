@@ -7,10 +7,8 @@ import Highlight from "../styles/highlight";
 
 const ProfilePage = (props) => {
 
-  const  user  = useContext(UserContext);
-  const [userInfo] = useState();
-  console.log(user);
-  console.log(userInfo);
+  const user = useContext(UserContext);
+
         return (
           user ? (
             <Container className="mb-5">
@@ -21,12 +19,6 @@ const ProfilePage = (props) => {
                           alt="Profile"
                           className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
                         />
-                    </Col>
-                    <Col md>
-                        <h2>{user.name}</h2>
-                        <p className="lead text-muted">{user.email}</p>
-                        <p className="lead">{user.role}</p>
-                        <p className="lead">{user.token}</p>
                     </Col>
                 </Row>
                 <Row>

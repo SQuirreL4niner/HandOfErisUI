@@ -1,60 +1,59 @@
-import React, { Component } from 'react';
+import React, { Component, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Progress } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {Form} from "react-bootstrap";
+import { Form } from 'react-bootstrap';
+import { useAuth0 } from '@auth0/auth0-react';
+import { UploadContext } from '../assets/auth/authentication/payload-context';
 
-class InputFile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedFile: null,
-            loaded: 0
-        }
-    }
+const InputFile = ({children}) => {
 
-    onChangeHandler = event => {
-        this.setState({
-            selectedFile: event.target.files[0],
-            loaded: 0,
-        })
-        console.log(event.target.files[0])
-    }
+  const { getAccessTokenSilently } = useAuth0();
+  const {upload, setUpload} = useContext(UploadContext)
 
-    onClickHandler = event => {
-        const data = new FormData();
-        data.append('file', this.state.selectedFile);
-        console.log('hello');
+  let test = upload;
+  console.log('hello upload')
+  //useEffect(() => {
+  console.log(test.valueOf());
+    if (test.valueOf() === true) {
+      (async () => {
+        try {
+          let accessToken = await getAccessTokenSilently({
+            audience: process.env.REACT_APP_AUTH0_AUDIENCE,
+            scope: 'upload:music'
+          });
 
-        axios.post(process.env.REACT_APP_API_URL + '/uploadsong', data, {
+          if(accessToken) {
+            let options = {
+              headers: {
+                'Authorization': `Bearer ${accessToken}`
+              }
+            };
 
-        })
-            .then(res => {
+            let result = await axios.post(process.env.REACT_APP_API_URL + '/uploadsong', {}, options)
+              .then(res => {
                 console.log(res.statusText);
-            })
-    }
+              });
 
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="offset-md-3 col-md-6">
-                        <div className="form-group files">
-                            <label>Upload Your File</label>
-                            <input type="file" name="file" onChange={this.onChangeHandler }/>
-                        </div>
-                        <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
-                    </div>
-                </div>
-                <br/><br/>
-                <audio controls>
-                    <source src="https://filestoragehandoferis.blob.core.windows.net/test/02%20Bled%20To%20Resurrect.mp3" type="audio/mpeg"/>
-                    <source src="https://filestoragehandoferis.blob.core.windows.net/test/02%20Bled%20To%20Resurrect.mp3" type="audio/ogg"/>
-                </audio>
-            </div>
-        );
+            if(result){
+              setUpload({...upload, upload:false})
+            }
+            setUpload({...upload, upload:false})
+          }
+        } catch (e) {
+          console.log('trouble in paradise');
+          console.log(e.message);
+        }
+      })();
     }
-}
+  //}, []);
+
+  return (
+      <>
+        {children}
+      </>
+  );
+};
 
 export default InputFile;

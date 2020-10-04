@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 
-import {Auth0Provider, useAuth0} from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react"
 import { UserContext } from '../assets/auth/authentication/user-context';
 import rules from "../assets/auth/authorization/rbac-rules"
 import PropTypes from 'prop-types';

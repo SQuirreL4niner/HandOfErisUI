@@ -8,16 +8,12 @@ import HomePage from './pages/home';
 import Callback from './assets/auth/authentication/callback';
 import DashboardPage from './pages/dashboard';
 import UploadPage from './pages/upload';
-
 import Profile from './pages/profile';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
+
 import { Auth0Provider } from '@auth0/auth0-react';
-import Login from './assets/auth/authentication/login';
-import Logout from './assets/auth/authentication/logout';
 import { UserContext } from './assets/auth/authentication/user-context';
-import User from './components/user';
-import { useAuth0 } from "@auth0/auth0-react";
 
 const App = () => {
 

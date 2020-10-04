@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 
-// import { AuthConsumer } from '../assets/auth/authentication/user-context';
+import { useAuth0 } from '@auth0/auth0-react';
+
+import User from '../components/user';
 import Can from '../assets/auth/authorization/can';
 import Logout from '../assets/auth/authentication/logout';
 import BandMedia from '../assets/media/band-media';
-import RehearsalContent from '../components/rehearsal-conent';
-import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
-import rules from '../assets/auth/authorization/rbac-rules';
-import User from '../components/user';
-import { Container } from 'react-bootstrap';
-import { UserContext } from '../assets/auth/authentication/user-context';
+import UploadAudio from '../components/upload-audio';
+import InputFile from '../components/input-file';
 
 const DashboardPage = () => {
+  const initialValues = {
+    title: '',
+    notes: '',
+    file: null
+  }
+
   const { user, isAuthenticated } = useAuth0();
+  // const [upload, setUpload] = useState({initialValues});
 
   console.log(user);
   return (
