@@ -1,6 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import FormTemplate from '../hooks/form-template';
 import InputFile from './input-file';
+
+import DatePicker from 'react-datepicker';
+import { UploadContext } from '../assets/auth/authentication/payload-context';
+
+
+import "react-datepicker/dist/react-datepicker.css";
+// import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+// import FormGroup from 'react-bootstrap/lib/FormGroup';
+// import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+// import HelpBlock from 'react-bootstrap/lib/HelpBlock';
 
 const UploadAudio = () => {
   const initialValues = {
@@ -8,10 +18,13 @@ const UploadAudio = () => {
     notes: '',
     file: null
   }
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } = FormTemplate({
+  const { values, errors, touched, handleChange, handleDPChange, handleFile, handleBlur, handleSubmit } = FormTemplate({
     initialValues,
     onSubmit: values => console.log({values})});
+
+  const [startDate, setStartDate] = useState(new Date());
   const [upload, setUpload] = useState(false)
+  //const { upload, setUpload } = useContext(UploadContext);
 
   return (
     [<InputFile children={upload}/>,
@@ -29,17 +42,15 @@ const UploadAudio = () => {
             <input type="text" name="notes" onChange={handleChange} value={values.notes}/>
             <br/>
 
-            <label>Upload Your File</label>
-            <input id="file" type="file" name="file" className="" onChange={handleChange} value={values.file || ''}/>
+            <DatePicker onChange={handleDPChange} dateFormat="dd/MM/yyyy" value={values.date} placeholder="Placeholder" id="datepicker" />
+            <br/><br/>
+
+            <label>Select Your File</label>
+            <input id="file" type="file" name="file" className="" onChange={handleFile}/>
             <br/>
 
             <button id="submit" type="submit" name="submit">Upload Jam</button>
           </form>
-          {/*<div className="form-group files">*/}
-          {/*  <label>Upload Your File</label>*/}
-          {/*  <input type="file" name="file" onChange={this.onChangeHandler}/>*/}
-          {/*</div>*/}
-          {/*<button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>*/}
         </div>
       </div>
       <br/><br/>

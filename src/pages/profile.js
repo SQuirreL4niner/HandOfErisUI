@@ -8,14 +8,15 @@ import Highlight from "../styles/highlight";
 const ProfilePage = (props) => {
 
   const user = useContext(UserContext);
-
+  console.log('over here profile')
+  console.log(user);
         return (
           user ? (
             <Container className="mb-5">
                 <Row className="align-items-center profile-header mb-5 text-center text-md-left">
                     <Col md={2}>
                         <img
-                          src={user.picture}
+                          src={user.userInfo.picture}
                           alt="Profile"
                           className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
                         />

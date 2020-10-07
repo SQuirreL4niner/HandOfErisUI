@@ -8,7 +8,7 @@ const FormTemplate = ({ initialValues, onSubmit }) => {
   const [touched, setTouched] = useState({});
   const [onSubmitting, setOnSubmitting] = useState(false);
   const [onBlur, setOnBlur] = useState(false);
-  const {upload, setUpload} = useContext(UploadContext);
+  const {upload, payload, setUpload} = useContext(UploadContext);
 
   const formRendered = useRef(true);
 
@@ -30,6 +30,20 @@ const FormTemplate = ({ initialValues, onSubmit }) => {
     setValues({...values, [name]: value});
   }
 
+  const handleDPChange = (event:Date) => {
+    let date = event.getMonth() + '/' + event.getDay() + '/' + event.getFullYear();
+    setValues({...values, ['date']: date});
+  }
+
+  const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { target } = event;
+    const { name } = target.files[0];
+    const data = new FormData();
+    data.append('file', target.files[0]);
+    event.persist();
+    setValues({...values, 'file': target.files[0]});
+  }
+
   const handleBlur = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
     const { name } = target;
@@ -42,7 +56,7 @@ const FormTemplate = ({ initialValues, onSubmit }) => {
       event.preventDefault();
       setErrors({...errors});
       onSubmit({ values, errors });
-      setUpload({upload: true});
+      setUpload({upload: true, payload: { title:values.title, notes:values.notes, file:values.file, date:values.date }});
     }
   }
 
@@ -51,6 +65,8 @@ const FormTemplate = ({ initialValues, onSubmit }) => {
     errors,
     touched,
     handleChange,
+    handleDPChange,
+    handleFile,
     handleBlur,
     handleSubmit
   };

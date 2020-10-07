@@ -11,6 +11,14 @@ const rules = {
             "read:music"
         ]
     },
+    test: {
+        static: [
+            "read:messages",
+            "read:music",
+            "upload:dawfile",
+            "upload:music"
+        ],
+    },
     admin: {
         static: [
             "read:messages",
