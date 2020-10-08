@@ -1,15 +1,14 @@
 import React from "react";
 
 import metal from '../assets/metal.png';
-import logo from "../assets/logo.jpg";
+import { Image } from 'react-bootstrap';
 const test = process.env.REACT_APP_CONFIG_TEST;
-console.log('test');
-console.log(test);
+
 const Footer = () => (
   <footer className="text-center" style={{backgroundColor:'black', color:'white'}}>
-      <img className="metal-logo" src={metal} alt="metal" width="25" />
+      <img src={metal} alt="metal" width="25" />
     <p>
-        Made with Metal {test}
+        Made with Metal
     </p>
   </footer>
 );

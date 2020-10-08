@@ -50,30 +50,28 @@ const BandMedia = () => {
   return (
     data ? (
       <Container>
-        <ul>
-          {data.map(item => (
-            <li key={item.id}>
-              <Card>
-                <CardHeader style={{color:'black', backgroundColor:'#007bff'}}>
-                  <Label>{item.title}</Label><br/>
-                  <Label>{item.notes}</Label><br/>
-                  <Label>{item.jamDate}</Label><br/>
-                </CardHeader>
-                <CardBody>
-                  <div >
-                    <ReactAudioPlayer  className="player"  src={item.blobURL} controls>
-                      {/*<source src={item.blobURL} type="audio/mpeg">*/}
-                      {/*</source>*/}
-                      {/*<source src={item.blobURL} type="audio/ogg">*/}
-                      {/*</source>*/}
-                    </ReactAudioPlayer>
-                  </div>
-                </CardBody>
-              </Card>
-              <br/>
-            </li>
-          ))}
-        </ul>
+        {
+          data.map(item =>
+            <Card key={item.id}>
+              <CardHeader style={{color:'black', backgroundColor:'#007bff'}}>
+                <Label>{item.title}</Label><br/>
+                <Label>{item.notes}</Label><br/>
+                <Label>{item.jamDate}</Label><br/>
+              </CardHeader>
+              <CardBody style={{backgroundColor:'grey'}}>
+                <div >
+                  <audio controls>
+                    <source src={item.blobURL} type="audio/mpeg">
+                    </source>
+                    <source src={item.blobURL} type="audio/ogg">
+                    </source>
+                  </audio>
+                </div>
+              </CardBody>
+            </Card>
+          )
+        }
+        <br/>
       </Container>
     ) : <div> hello no data</div>
   );

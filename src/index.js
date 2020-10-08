@@ -28,7 +28,7 @@ const App = () => {
     >
       <UserContext.Provider value={{userInfo, setUser}}>
         <body className="app" style={{backgroundColor: 'black', color: 'white',
-        margin:'0', padding:'0', height:'100vh', width:'100vw'}}>
+        }}>
           <Container>
             <Router>
               <Navbar/>

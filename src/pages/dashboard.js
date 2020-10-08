@@ -30,14 +30,14 @@ const DashboardPage = () => {
             perform='upload:music'
             yes={() => (
               <div>
-                <h1>Dashboard</h1>
+                <br/>
+                <h1>Jams</h1>
                 <br/>
                 {/*<Logout/>*/}
                 <br/>
-                <br/>
-                <p>"soundcloud tracks will be shown here"<br/>
-                  "there will also be a special admin dashboard"
-                </p>
+                {/*<p>"soundcloud tracks will be shown here"<br/>*/}
+                {/*  "there will also be a special admin dashboard"*/}
+                {/*</p>*/}
                 <BandMedia/>
               </div>
             )}
@@ -48,9 +48,9 @@ const DashboardPage = () => {
                 {/*<Logout/>*/}
                 <br/>
                 <br/>
-                <p>"soundcloud tracks will be shown here"<br/>
-                  "there will also be a special regular user dashboard"
-                </p>
+                {/*<p>"soundcloud tracks will be shown here"<br/>*/}
+                {/*  "there will also be a special regular user dashboard"*/}
+                {/*</p>*/}
               </div>
             )}
           />]
