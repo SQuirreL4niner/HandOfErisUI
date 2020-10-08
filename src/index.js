@@ -27,10 +27,12 @@ const App = () => {
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
     >
       <UserContext.Provider value={{userInfo, setUser}}>
-        <div className="app" className="d-flex flex-column h-100">
-          <Container className="flex-grow-1 mt-5">
+        <body className="app" style={{backgroundColor: 'black', color: 'white',
+        margin:'0', padding:'0', height:'100vh', width:'100vw'}}>
+          <Container>
             <Router>
               <Navbar/>
+              <br/>
               <Switch>
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/callback" component={Callback}/>
@@ -41,7 +43,7 @@ const App = () => {
             </Router>
             <Footer/>
           </Container>
-        </div>
+        </body>
       </UserContext.Provider>
     </Auth0Provider>
   );

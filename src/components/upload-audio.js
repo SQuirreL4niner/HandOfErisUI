@@ -5,8 +5,10 @@ import InputFile from './input-file';
 import DatePicker from 'react-datepicker';
 import { UploadContext } from '../assets/auth/authentication/payload-context';
 
+import { Container, Row, Form, InputGroup, Button } from 'react-bootstrap';
 
 import "react-datepicker/dist/react-datepicker.css";
+import Input from 'reactstrap/es/Input';
 // import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 // import FormGroup from 'react-bootstrap/lib/FormGroup';
 // import ControlLabel from 'react-bootstrap/lib/ControlLabel';
@@ -28,33 +30,35 @@ const UploadAudio = () => {
 
   return (
     [<InputFile children={upload}/>,
-    <div className="container">
-      <div className="row">
+    <Container className="container">
+      <Row>
         <div className="offset-md-3 col-md-6">
-          <form className="upload" onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <h1>Upload Jams</h1>
 
             <label>Song Title</label>
-            <input type="text" name="title" onChange={handleChange} value={values.title}/>
+            <Input type="text" name="title" onChange={handleChange} value={values.title}/>
             <br/>
 
             <label>Notes</label>
-            <input type="text" name="notes" onChange={handleChange} value={values.notes}/>
+            <Input type="text" name="notes" onChange={handleChange} value={values.notes}/>
             <br/>
 
-            <DatePicker onChange={handleDPChange} dateFormat="dd/MM/yyyy" value={values.date} placeholder="Placeholder" id="datepicker" />
+            <label>Jam Date</label>
+            <br/>
+            <DatePicker onChange={handleDPChange} value={values.date} />
             <br/><br/>
 
             <label>Select Your File</label>
-            <input id="file" type="file" name="file" className="" onChange={handleFile}/>
+            <Input id="file" type="file" name="file" className="" onChange={handleFile}/>
             <br/>
 
-            <button id="submit" type="submit" name="submit">Upload Jam</button>
-          </form>
+            <Button id="submit" type="submit" name="submit">Upload Jam</Button>
+          </Form>
         </div>
-      </div>
+      </Row>
       <br/><br/>
-    </div>]
+    </Container>]
   )
 }
 

@@ -12,9 +12,8 @@ const UploadPage = () => {
   const [upload, setUpload] = useState({ upload: false });
 
   return (
-    [
-      <UploadContext.Provider value={{ upload, setUpload }}>
-        <UploadAudio/>,
+    [<UploadContext.Provider value={{ upload, setUpload }}>
+        <UploadAudio/>
       </UploadContext.Provider>]
   );
 };

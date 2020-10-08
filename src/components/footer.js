@@ -6,8 +6,8 @@ const test = process.env.REACT_APP_CONFIG_TEST;
 console.log('test');
 console.log(test);
 const Footer = () => (
-  <footer className="bg-light p-3 text-center">
-      <img className="mb-3 metal-logo" src={metal} alt="metal" width="25" />
+  <footer className="text-center" style={{backgroundColor:'black', color:'white'}}>
+      <img className="metal-logo" src={metal} alt="metal" width="25" />
     <p>
         Made with Metal {test}
     </p>
