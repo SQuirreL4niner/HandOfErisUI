@@ -30,8 +30,8 @@ const FormTemplate = ({ initialValues, onSubmit }) => {
     setValues({...values, [name]: value});
   }
 
-  const handleDPChange = (event:Date) => {
-    let date = event.getMonth() + '/' + event.getDay() + '/' + event.getFullYear();
+  const handleDPChange = (event) => {
+    let date = event;
     setValues({...values, ['date']: date});
   }
 

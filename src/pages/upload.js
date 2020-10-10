@@ -1,11 +1,10 @@
-import React, { Component, useContext, useState } from 'react';
-import axios from 'axios';
-import { Progress } from 'reactstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import InputFile from '../components/input-file';
+import React, { useState } from 'react';
+
 import UploadAudio from '../components/upload-audio';
 import { UploadContext } from '../assets/auth/authentication/payload-context';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UploadPage = () => {
 

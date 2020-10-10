@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { useAuth0 } from '@auth0/auth0-react';
-import Label from 'reactstrap/lib/Label';
-import ReactAudioPlayer from 'react-audio-player';
-import { Card, Container } from 'react-bootstrap';
-import CardHeader from 'reactstrap/lib/CardHeader';
-import CardBody from 'reactstrap/es/CardBody';
+import { Container, Row, Col, Button, Card, Lab } from 'react-bootstrap';
+
 
 const ExtraPropTypes = require('react-extra-prop-types');
 
@@ -49,31 +46,58 @@ const BandMedia = () => {
 
   return (
     data ? (
-      <Container>
+      <Container fluid="md">
+        <br/>
+        <Row>
+          <Col md={5}>
+          </Col>
+          <Col md={5}>
+            <Button variant="warning" size='lg'> Jams </Button>
+          </Col>
+          <Col md={5}>
+          </Col>
+        </Row>
+        <br/><br/>
+        <Row>
+          <Col md={3}>
+            <Button variant="outline-danger" size='lg'> Pinned </Button>
+          </Col>
+          <Col md={3}>
+            <Button variant="outline-danger" size='lg'> By Date </Button>
+          </Col>
+          <Col md={3}>
+            <Button variant="outline-danger" size='lg'> By Song </Button>
+          </Col>
+          <Col md={3}>
+            <Button variant="outline-danger" size='lg'> Snippets </Button>
+          </Col>
+        </Row>
+        <br/><br/>
         {
           data.map(item =>
             <Card key={item.id}>
-              <CardHeader style={{color:'black', backgroundColor:'#007bff'}}>
-                <Label>{item.title}</Label><br/>
-                <Label>{item.notes}</Label><br/>
-                <Label>{item.jamDate}</Label><br/>
-              </CardHeader>
-              <CardBody style={{backgroundColor:'grey'}}>
-                <div >
-                  <audio controls>
-                    <source src={item.blobURL} type="audio/mpeg">
-                    </source>
-                    <source src={item.blobURL} type="audio/ogg">
-                    </source>
-                  </audio>
+              <Card.Body style={{ color: 'black', backgroundColor: '#9e9a75' }}>
+                <Card.Title>{item.title}</Card.Title><br/>
+                <div style={{ backgroundColor: '#41533b' }}>
+                <Card.Subtitle>{item.notes}</Card.Subtitle><br/>
+                <Card.Subtitle>{item.jamDate}</Card.Subtitle><br/>
+                <Card.Text>
+                    <br/><br/>
+                    <audio controls>
+                      <source src={item.blobURL} type="audio/mpeg">
+                      </source>
+                      <source src={item.blobURL} type="audio/ogg">
+                      </source>
+                    </audio>
+                </Card.Text>
                 </div>
-              </CardBody>
+              </Card.Body>
             </Card>
           )
         }
         <br/>
       </Container>
-    ) : <div> hello no data</div>
+    ) : <div>...loading</div>
   );
 };
 

@@ -1,9 +1,11 @@
-import {Nav} from "react-bootstrap";
-import {NavLink as RouterNavLink, Redirect} from "react-router-dom";
+
+import { NavLink as RouterNavLink, Redirect } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import Can from "../assets/auth/authorization/can";
 import { useAuth0 } from '@auth0/auth0-react';
-import rules from '../assets/auth/authorization/rbac-rules';
+
+import {Nav} from 'react-bootstrap';
+
 
 
 const Navbar = () => {

@@ -2,8 +2,8 @@ import React, { useState, useContext } from 'react';
 
 import { UserContext } from '../assets/auth/authentication/user-context';
 
-import {Container, Row, Col} from "react-bootstrap";
 import Highlight from "../styles/highlight";
+import { Row, Col } from 'react-bootstrap';
 
 const ProfilePage = (props) => {
 
@@ -12,7 +12,7 @@ const ProfilePage = (props) => {
   console.log(user);
         return (
           user ? (
-            <Container className="mb-5">
+            <div>
                 <Row className="align-items-center profile-header mb-5 text-center text-md-left">
                     <Col md={2}>
                         <img
@@ -25,7 +25,7 @@ const ProfilePage = (props) => {
                 <Row>
                     <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
                 </Row>
-            </Container>
+            </div>
           ) : (<div>No User Profile to show</div>)
     );
 }
