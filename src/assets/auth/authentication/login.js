@@ -8,7 +8,7 @@ function Login() {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   return !isAuthenticated && (
-      <Button className="btn-margin btn-primary" onClick={loginWithRedirect}>
+      <Button className="btn-margin btn-primary" size="sm" onClick={loginWithRedirect}>
         Login
       </Button>
   );

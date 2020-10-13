@@ -39,7 +39,7 @@ const App = () => {
               <Col xs={2} id="sidebar-wrapper">
                 <Sidebar/>
               </Col>
-              <Col xs={8} id="page-content-wrapper">
+              <Col xs={8} id="">
                 <Switch>
                   <Route exact path="/" component={HomePage}/>
                   <Route path="/callback" component={Callback}/>

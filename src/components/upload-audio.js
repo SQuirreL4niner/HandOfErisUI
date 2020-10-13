@@ -63,9 +63,9 @@ const UploadAudio = () => {
           <Col>
             <Button variant="outline-danger" size='lg'> Samples </Button>
           </Col>
-          <Col>
-            <Button variant="outline-danger" size='lg'> Snippets </Button>
-          </Col>
+          {/*<Col>*/}
+          {/*  <Button variant="outline-danger" size='lg'> Snippets </Button>*/}
+          {/*</Col>*/}
         </Row>
         <br/><br/>
 
@@ -103,7 +103,8 @@ const UploadAudio = () => {
         <br/><br/>
 
         <Form.Group>
-          <Form.Label>Select Your File</Form.Label>
+          <Form.Label>Select Your File </Form.Label><br/>
+          <Form.Label>Note: Must Be in MP3 or OGG Format</Form.Label>
           <Form.File className="mb-3" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="file"
                      type="file" name="file" onChange={handleFile}>
           </Form.File>

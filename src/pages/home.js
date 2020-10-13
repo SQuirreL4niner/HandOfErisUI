@@ -21,15 +21,17 @@ const HomePage = () => {
         <DashboardPage/>
       </>
     ) : (
-      [
+
         <div>
           <br/><br/>
-          <ReactPlayer style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+          <ReactPlayer style={{ maxWidth:'100%',width: '40%',
+            margin: '0 auto',
+            maxHeight:'100%', display: 'flex' }}
                        url="https://soundcloud.com/user-165647041/sets/shrine-of-the-seventh-planet"/>
           <br/><br/>
         </div>
         // <BandLogo/>
-      ]
+
     )
   );
 };

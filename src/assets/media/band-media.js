@@ -83,7 +83,9 @@ const BandMedia = () => {
                 <Card.Subtitle>{item.jamDate}</Card.Subtitle><br/>
                 <Card.Text>
                     <br/><br/>
-                    <audio controls>
+                    <audio controls style={{ maxWidth:'100%',width: '90%',
+                      margin: '0 auto',
+                      maxHeight:'100%', display: 'flex'}}>
                       <source src={item.blobURL} type="audio/mpeg">
                       </source>
                       <source src={item.blobURL} type="audio/ogg">

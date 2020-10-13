@@ -21,7 +21,7 @@ const Links = ({ props }) => {
               {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
               <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
               <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto col-sm-12 d-none d-md-block sidebar">
+                <Nav className="col-md-12 d-md-block">
                   <Nav.Link
                     as={RouterNavLink}
                     to="/dashboard"
@@ -55,8 +55,8 @@ const Links = ({ props }) => {
               {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
               <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
               <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="col-md-12 d-none d-md-block sidebar">
-                  <div className="sidebar-sticky"></div>
+                <Nav className="col-md-12 d-md-block">
+                  <div className=""></div>
                   <Nav.Link
                     as={RouterNavLink}
                     to="/"
@@ -80,11 +80,11 @@ const Links = ({ props }) => {
         />
       ) :
       (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" variant="dark">
           {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
           <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="col-md-12 d-none d-md-block sidebar" fluid>
+            <Nav className="col-md-12 d-md-block" fluid>
               <div className="sidebar-sticky"></div>
               <Nav.Link
                 as={RouterNavLink}
