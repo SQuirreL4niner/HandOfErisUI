@@ -20,6 +20,7 @@ import './styles/sidebar.css';
 
 import { Col, Container, Row } from 'react-bootstrap';
 import UserMenu from './components/user-menu';
+import BandLogo from './components/band-logo';
 
 const App = () => {
 
@@ -40,6 +41,16 @@ const App = () => {
                 <Sidebar/>
               </Col>
               <Col xs={8} id="">
+                <BandLogo/>
+              </Col>
+              <Col xs={2}>
+                <UserMenu/>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={2}>
+              </Col>
+              <Col xs={8} id="">
                 <Switch>
                   <Route exact path="/" component={HomePage}/>
                   <Route path="/callback" component={Callback}/>
@@ -49,7 +60,6 @@ const App = () => {
                 </Switch>
               </Col>
               <Col xs={2}>
-                <UserMenu/>
               </Col>
             </Row>
           </Router>

@@ -17,10 +17,10 @@ const UserMenu = () => {
   const history = useHistory();
   return (
     user ? (
-        <Navbar collapseOnSelect expand="lg" variant="dark">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-start">
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
             <span>
-              <MdPerson className="material-icons md-48" style={{ color: 'red' }}/>
+              <MdPerson className="material-icons md-48" style={{ color: 'green' }}/>
             </span>
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -54,11 +54,11 @@ const UserMenu = () => {
         </Navbar>
       ) :
       (
-        <Navbar collapseOnSelect expand="lg" variant="dark" className="">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-end">
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
             <span>
-              <MdPerson className="material-icons md-48" style={{ color: 'white' }}/>
+              <MdPerson className="material-icons md-48" style={{ color: 'red' }}/>
             </span>
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">

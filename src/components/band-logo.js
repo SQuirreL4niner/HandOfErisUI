@@ -1,15 +1,12 @@
 import React from "react";
 
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo.png'
 
 const BandLogo = () => (
-    <div className="text-center band-logo my-5">
-        <img className="mb-3 app-logo" src={logo} alt="Hand of Eris logo" width="240"/>
-        <h1 className="mb-4">Welcome to the Hand of Eris</h1>
-
-        <p className="lead">
-            This application with have auth with roles, content, soundcloud content, and an e-shop
-        </p>
+    <div className="text-center">
+        <img className="app-logo" src={logo} alt="Hand of Eris logo"
+        style={{maxWidth:'100%',
+          margin: '0 auto', maxHeight:'100%', display: 'flex'}}/>
     </div>
 );
 
