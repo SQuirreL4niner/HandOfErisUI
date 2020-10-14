@@ -34,7 +34,7 @@ const App = () => {
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
     >
       <UserContext.Provider value={{ userInfo, setUser }}>
-        <Container fluid>
+        <Container fluid="xs">
           <Router>
             <Row>
               <Col xs={2} id="sidebar-wrapper">
@@ -47,10 +47,10 @@ const App = () => {
                 <UserMenu/>
               </Col>
             </Row>
-            <Row>
-              <Col xs={2}>
+            <Row className="justify-content-md-center">
+              <Col xs={1}>
               </Col>
-              <Col xs={8} id="">
+              <Col xs={8}>
                 <Switch>
                   <Route exact path="/" component={HomePage}/>
                   <Route path="/callback" component={Callback}/>
@@ -59,7 +59,7 @@ const App = () => {
                   <Route path="/profile" component={Profile}/>
                 </Switch>
               </Col>
-              <Col xs={2}>
+              <Col xs={1}>
               </Col>
             </Row>
           </Router>

@@ -6,7 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Can from '../assets/auth/authorization/can';
 
 import { Nav, Navbar } from 'react-bootstrap';
-import '../styles/sidebar.css';
+import { MdMenu } from 'react-icons/md/index';
 
 const Links = ({ props }) => {
 
@@ -17,16 +17,21 @@ const Links = ({ props }) => {
           role={user[process.env.REACT_APP_AUTH0_ROLE_URL]}
           perform='upload:music'
           yes={() => (
-            <Navbar collapseOnSelect expand="lg" variant="dark">
+            <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-start">
               {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
-              <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-              <Navbar.Collapse id="responsive-navbar-nav">
+              <Navbar.Toggle aria-controls="responsive-navbar-nav">
+                <span>
+                  <MdMenu className="material-icons md-48"/>
+                </span>
+              </Navbar.Toggle>
+              <Navbar.Collapse id="responsive-navbar-nav" style={{}}>
                 <Nav className="col-md-12 d-md-block">
                   <Nav.Link
                     as={RouterNavLink}
                     to="/dashboard"
                     exact
                     activeClassName="router-link-exact-active"
+                    style={{margin:"0 auto", paddingLeft:"10px"}}
                   >
                     Home
                   </Nav.Link>
@@ -35,6 +40,7 @@ const Links = ({ props }) => {
                     to="/profile"
                     exact
                     activeClassName="router-link-exact-active"
+                    style={{margin:"0 auto", paddingLeft:"10px"}}
                   >
                     Profile
                   </Nav.Link>
@@ -43,6 +49,7 @@ const Links = ({ props }) => {
                     to="/upload"
                     exact
                     activeClassName="router-link-exact-active"
+                    style={{margin:"0 auto", paddingLeft:"10px"}}
                   >
                     Upload
                   </Nav.Link>
@@ -51,9 +58,13 @@ const Links = ({ props }) => {
             </Navbar>
           )}
           no={() => (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="justify-content-center" style={{ right:'0', left:'auto' }}>
               {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
-              <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav">
+                <span>
+                  <MdMenu className="material-icons md-48"/>
+                </span>
+              </Navbar.Toggle>
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="col-md-12 d-md-block">
                   <div className=""></div>
@@ -62,6 +73,7 @@ const Links = ({ props }) => {
                     to="/"
                     exact
                     activeClassName="router-link-exact-active"
+                    style={{margin:"0 auto", paddingLeft:"10px"}}
                   >
                     Home
                   </Nav.Link>
@@ -70,6 +82,7 @@ const Links = ({ props }) => {
                     to="/profile"
                     exact
                     activeClassName="router-link-exact-active"
+                    style={{margin:"0 auto", paddingLeft:"10px"}}
                   >
                     Test
                   </Nav.Link>
@@ -80,17 +93,22 @@ const Links = ({ props }) => {
         />
       ) :
       (
-        <Navbar collapseOnSelect expand="lg" variant="dark">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-start" >
           {/*<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>*/}
-          <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav">
+            <span>
+              <MdMenu className="material-icons md-48"/>
+            </span>
+          </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="col-md-12 d-md-block" fluid>
+            <Nav className="col-md-12 d-md-block">
               <div className="sidebar-sticky"></div>
               <Nav.Link
                 as={RouterNavLink}
                 to="/dashboard"
                 exact
                 activeClassName="router-link-exact-active"
+                style={{margin:"0 auto", paddingLeft:"10px"}}
               >
                 Home
               </Nav.Link>
@@ -99,6 +117,7 @@ const Links = ({ props }) => {
                 to="/profile"
                 exact
                 activeClassName="router-link-exact-active"
+                style={{margin:"0 auto", paddingLeft:"10px"}}
               >
                 Profile
               </Nav.Link>
@@ -107,6 +126,7 @@ const Links = ({ props }) => {
                 to="/profile"
                 exact
                 activeClassName="router-link-exact-active"
+                style={{margin:"0 auto", paddingLeft:"10px"}}
               >
                 Band
               </Nav.Link>
@@ -115,22 +135,16 @@ const Links = ({ props }) => {
                 to="/profile"
                 exact
                 activeClassName="router-link-exact-active"
+                style={{margin:"0 auto", paddingLeft:"10px"}}
               >
-                Discography
+                Catalog
               </Nav.Link>
               <Nav.Link
                 as={RouterNavLink}
                 to="/profile"
                 exact
                 activeClassName="router-link-exact-active"
-              >
-                Shop
-              </Nav.Link>
-              <Nav.Link
-                as={RouterNavLink}
-                to="/profile"
-                exact
-                activeClassName="router-link-exact-active"
+                style={{margin:"0 auto", paddingLeft:'10px'}}
               >
                 Pics
               </Nav.Link>

@@ -10,6 +10,7 @@ import { Row, Col, Container, Navbar, Nav } from 'react-bootstrap';
 import { useAuth0 } from '@auth0/auth0-react';
 
 import { MdShoppingCart, MdPerson, MdAttachMoney } from 'react-icons/md';
+import { FaGift } from 'react-icons/fa';
 
 const UserMenu = () => {
 
@@ -17,7 +18,7 @@ const UserMenu = () => {
   const history = useHistory();
   return (
     user ? (
-        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-start">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-end">
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
             <span>
               <MdPerson className="material-icons md-48" style={{ color: 'green' }}/>
@@ -47,14 +48,14 @@ const UserMenu = () => {
                 exact
                 activeClassName="router-link-exact-active"
               >
-                <MdAttachMoney className="material-icons md-36" style={{ color: 'white' }}/>
+                <FaGift className="material-icons md-36" style={{ color: 'white' }}/>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
       ) :
       (
-        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-end">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="justify-content-center">
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav">
             <span>
