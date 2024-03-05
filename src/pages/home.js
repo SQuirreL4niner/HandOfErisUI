@@ -10,28 +10,36 @@ import ReactPlayer from 'react-player';
 import User from '../components/user';
 import Logout from '../assets/auth/authentication/logout';
 import DashboardPage from './dashboard';
+import cover1 from '../assets/cover1.jif';
 
 const HomePage = () => {
-
   const { isAuthenticated } = useAuth0();
 
-  return (
-    isAuthenticated ? (
-      <>
-        <DashboardPage/>
-      </>
-    ) : (
-
-        <div>
-          <br/><br/>
-          <ReactPlayer style={{ maxWidth:'100%',width: '40%',
-            margin: '0 auto', maxHeight:'100%', display: 'flex' }}
-                       url="https://soundcloud.com/user-165647041/sets/shrine-of-the-seventh-planet"/>
-          <br/><br/>
-        </div>
-        // <BandLogo/>
-
-    )
+  return isAuthenticated ? (
+    <>
+      <DashboardPage />
+    </>
+  ) : (
+    <div>
+      <br />
+      <br />
+      <div className="text-center">
+        <img
+          className="app-logo"
+          src={cover1}
+          alt="Album Cover"
+          style={{
+            maxWidth: '100%',
+            margin: '0 auto',
+            maxHeight: '100%',
+            display: 'flex',
+          }}
+        />
+      </div>
+      <br />
+      <br />
+    </div>
+    // <BandLogo/>
   );
 };
 
