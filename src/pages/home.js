@@ -10,7 +10,7 @@ import ReactPlayer from 'react-player';
 import User from '../components/user';
 import Logout from '../assets/auth/authentication/logout';
 import DashboardPage from './dashboard';
-import cover1 from '../assets/cover1.jif';
+import homeimage from '../assets/home-image.png';
 
 const HomePage = () => {
   const { isAuthenticated } = useAuth0();
@@ -21,25 +21,31 @@ const HomePage = () => {
     </>
   ) : (
     <div>
-      <br />
-      <br />
-      <div className="text-center">
+      <div className="">
         <img
-          className="app-logo"
-          src={cover1}
-          alt="Album Cover"
+          className=""
+          src={homeimage}
+          alt="Home Page"
           style={{
-            maxWidth: '100%',
-            margin: '0 auto',
-            maxHeight: '100%',
-            display: 'flex',
+            width: '100vw',
+            height: '45vw',
           }}
         />
+        <button
+          className="btn btn-danger"
+          style={{
+            padding: '30px',
+            position: 'absolute',
+            left: '800px',
+            top: '200px',
+          }}
+        >
+          Click to play latest
+        </button>
       </div>
       <br />
-      <br />
     </div>
-    // <BandLogo/>
+    //
   );
 };
 

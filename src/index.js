@@ -1,29 +1,28 @@
 import React, { useState, useMemo, useContext } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import HomePage from './pages/home';
 import Callback from './assets/auth/authentication/callback';
 import DashboardPage from './pages/dashboard';
 import UploadPage from './pages/upload';
+import SplashPage from './pages/splash';
 import Profile from './pages/profile';
 import Navbar from './components/navbar';
 import Sidebar from './components/sidebar';
 import Footer from './components/footer';
+import Main from './pages/main';
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserContext } from './assets/auth/authentication/user-context';
 
-import './app.css';
-import './styles/sidebar.css';
+import './App.css';
 
 import { Col, Container, Row } from 'react-bootstrap';
 import UserMenu from './components/user-menu';
 import BandLogo from './components/band-logo';
 
 const App = () => {
-
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
 
   return (
@@ -36,34 +35,8 @@ const App = () => {
       <UserContext.Provider value={{ userInfo, setUser }}>
         <Container fluid="xs">
           <Router>
-            <Row>
-              <Col xs={2} id="sidebar-wrapper">
-                <Sidebar/>
-              </Col>
-              <Col xs={8} id="">
-                <BandLogo/>
-              </Col>
-              <Col xs={2}>
-                <UserMenu/>
-              </Col>
-            </Row>
-            <Row className="justify-content-md-center">
-              <Col xs={1}>
-              </Col>
-              <Col xs={8}>
-                <Switch>
-                  <Route exact path="/" component={HomePage}/>
-                  <Route path="/callback" component={Callback}/>
-                  <Route exact path="/dashboard" component={DashboardPage}/>
-                  <Route path="/upload" component={UploadPage}/>
-                  <Route path="/profile" component={Profile}/>
-                </Switch>
-              </Col>
-              <Col xs={1}>
-              </Col>
-            </Row>
+            <Main />
           </Router>
-          <Footer/>
         </Container>
       </UserContext.Provider>
     </Auth0Provider>
@@ -71,4 +44,4 @@ const App = () => {
 };
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App/>, rootElement);
+ReactDOM.render(<App />, rootElement);
