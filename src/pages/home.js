@@ -3,15 +3,15 @@ import { Redirect, Link } from 'react-router-dom';
 
 import { AuthConsumer } from '../assets/auth/authentication/user-context';
 
-import Login from '../assets/auth/authentication/login';
-import BandLogo from '../components/band-logo';
 import { useAuth0 } from '@auth0/auth0-react';
 import ReactPlayer from 'react-player';
-import User from '../components/user';
-import Logout from '../assets/auth/authentication/logout';
 import DashboardPage from './dashboard';
+import { Col, Row } from 'react-bootstrap';
 import homeimage from '../assets/Eris_portal_ghosts_demons.png';
-import altlogo from '../assets/symbol-01.png';
+import itunes from '../assets/itunes.png';
+import spotifiy from '../assets/spotify.png';
+import youtube from '../assets/youtube.png';
+import youtubemusic from '../assets/youtubemusic.png';
 
 const HomePage = () => {
   const { isAuthenticated } = useAuth0();
@@ -37,34 +37,81 @@ const HomePage = () => {
             className="btn btn-danger"
             style={{
               position: 'absolute',
-              top: '30%',
+              top: '20%',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              alignItems: 'start',
-              height: '10%',
-              width: '30%',
-              left: '35%',
+              alignItems: 'center',
+              height: '8%',
+              width: '23%',
+              left: '38%',
               //marginBottom: '20px',
               textAlign: 'center',
               paddingLeft: '10px',
               paddingRight: '10px',
+              fontSize: '4vw',
             }}
           >
             Play Latest
           </button>
         </Link>
-        {/* <div className='mx-auto'>
-          <img
-            className=' center-block'
-            src={altlogo}
-            style={{
-              width: '25vw',
-              height: 'auto',
-            }}
-          />
-        </div> */}
+        <br />
+        <br />
+        <br />
+        <Row>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={spotifiy}
+              style={{
+                width: '25vw',
+                height: 'auto',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={itunes}
+              style={{
+                width: '25vw',
+                height: 'auto',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
+        <br />
+        <Row>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={youtube}
+              style={{
+                width: '25vw',
+                height: 'auto',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={youtubemusic}
+              style={{
+                width: '25vw',
+                height: 'auto',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
       </div>
+      <br />
+      <br />
       <br />
     </div>
     //
