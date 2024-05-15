@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 import { AuthConsumer } from '../assets/auth/authentication/user-context';
 
@@ -10,7 +10,8 @@ import ReactPlayer from 'react-player';
 import User from '../components/user';
 import Logout from '../assets/auth/authentication/logout';
 import DashboardPage from './dashboard';
-import homeimage from '../assets/home-image.png';
+import homeimage from '../assets/Eris_portal_ghosts_demons.png';
+import altlogo from '../assets/symbol-01.png';
 
 const HomePage = () => {
   const { isAuthenticated } = useAuth0();
@@ -28,20 +29,41 @@ const HomePage = () => {
           alt="Home Page"
           style={{
             width: '100vw',
-            height: '45vw',
+            height: '100vw',
           }}
         />
-        <button
-          className="btn btn-danger"
-          style={{
-            padding: '30px',
-            position: 'absolute',
-            left: '800px',
-            top: '200px',
-          }}
-        >
-          Click to play latest
-        </button>
+        <Link to={`/pestilant-evocation`}>
+          <button
+            className="btn btn-danger"
+            style={{
+              position: 'absolute',
+              top: '30%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'start',
+              height: '10%',
+              width: '30%',
+              left: '35%',
+              //marginBottom: '20px',
+              textAlign: 'center',
+              paddingLeft: '10px',
+              paddingRight: '10px',
+            }}
+          >
+            Play Latest
+          </button>
+        </Link>
+        {/* <div className='mx-auto'>
+          <img
+            className=' center-block'
+            src={altlogo}
+            style={{
+              width: '25vw',
+              height: 'auto',
+            }}
+          />
+        </div> */}
       </div>
       <br />
     </div>

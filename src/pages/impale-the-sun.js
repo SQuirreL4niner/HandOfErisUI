@@ -29,26 +29,9 @@ const ImpaleTheSun = () => {
           style={{
             objectFit: 'cover',
             width: '100%',
-            height: '100vh',
             margin: '0 auto',
           }}
         />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
         <br />
       </div>

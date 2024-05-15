@@ -32,27 +32,11 @@ const PestilantEvocation = () => {
             style={{
               objectFit: 'cover',
               width: '100%',
-              height: '100vh',
+              //height: '100vh',
               margin: '0 auto',
             }}
           />
         </Link>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
         <br />
       </div>

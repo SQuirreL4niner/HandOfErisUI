@@ -122,7 +122,7 @@ const Sidebar = ({ props }) => {
           <div className="sidebar-sticky"></div>
           <Nav.Link
             as={Link}
-            to="/dashboard"
+            to="/home"
             exact
             eventKey="1"
             activeClassName="router-link-exact-active"

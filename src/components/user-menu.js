@@ -123,9 +123,9 @@ const UserMenu = () => {
             exact
             eventKey="4"
             activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '180px' }}
+            style={{ margin: '0 auto', paddingLeft: '170px' }}
           >
-            Links
+            YouTube
           </Nav.Link>
           <Nav.Link
             as={Link}
