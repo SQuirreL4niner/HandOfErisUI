@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink as RouterNavLink, useNavigate, Link } from 'react-router-dom';
+import { NavLink as RouterNavLink, useLocation, Link } from 'react-router-dom';
 
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -12,7 +12,8 @@ import '../styles/sidebar.css';
 
 const Sidebar = ({ props }) => {
   const { user, isAuthenticated } = useAuth0();
-  let navigate = useNavigate();
+  const location = useLocation();
+  const size = location.pathname.match(/pest.*/) ? 'xs' : 'lg';
   return user ? (
     <Can
       role={user[process.env.REACT_APP_AUTH0_ROLE_URL]}
@@ -80,16 +81,6 @@ const Sidebar = ({ props }) => {
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="col-md-12 d-md-block">
-              <div className=""></div>
-              <Nav.Link
-                as={RouterNavLink}
-                to="/"
-                exact
-                activeClassName="router-link-exact-active"
-                style={{ margin: '0 auto', paddingLeft: '10px' }}
-              >
-                Home
-              </Nav.Link>
               <Nav.Link
                 as={RouterNavLink}
                 to="/profile"
@@ -97,7 +88,7 @@ const Sidebar = ({ props }) => {
                 activeClassName="router-link-exact-active"
                 style={{ margin: '0 auto', paddingLeft: '10px' }}
               >
-                Test
+                Dummy
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -107,7 +98,7 @@ const Sidebar = ({ props }) => {
   ) : (
     <Navbar
       collapseOnSelect
-      expand="lg"
+      expand={size}
       variant="dark"
       className="d-flex align-items-center"
     >

@@ -34,6 +34,9 @@ import Merch from './merch';
 const Main = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
   const location = useLocation();
+  const showLogo = location.pathname.match(/pestilant-evocation.*/)
+    ? false
+    : true;
 
   return location.pathname === '/' ? (
     <>
@@ -46,7 +49,7 @@ const Main = () => {
           <Sidebar />
         </Col>
         <Col xs={8} id="">
-          <BandLogo />
+          {showLogo ? <BandLogo /> : <></>}
         </Col>
         <Col xs={2}>
           <UserMenu />
@@ -65,7 +68,10 @@ const Main = () => {
               path="/pestilant-evocation"
               element={<PestilantEvocation />}
             />
-            <Route path="/impale-the-sun" element={<ImpaleTheSun />} />
+            <Route
+              path="/pestilant-evocation/impale-the-sun"
+              element={<ImpaleTheSun />}
+            />
             <Route path="/merch" element={<Merch />} />
           </Routes>
         </Col>

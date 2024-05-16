@@ -1,6 +1,5 @@
 import React from 'react';
-import { NavLink as RouterNavLink, Navigate, Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { NavLink as RouterNavLink, useLocation, Link } from 'react-router-dom';
 
 import Logout from '../assets/auth/authentication/logout';
 import User from './user';
@@ -16,7 +15,8 @@ import Merch from '../pages/merch';
 
 const UserMenu = () => {
   const { user } = useAuth0();
-  const history = useNavigate();
+  const location = useLocation();
+  const size = location.pathname.match(/pest.*/) ? 'xs' : 'lg';
   return user ? (
     <Navbar
       collapseOnSelect
@@ -70,7 +70,7 @@ const UserMenu = () => {
   ) : (
     <Navbar
       collapseOnSelect
-      expand="lg"
+      expand={size}
       variant="dark"
       className="justify-content-end"
     >
