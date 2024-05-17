@@ -12,6 +12,10 @@ import itunes from '../assets/itunes.png';
 import spotifiy from '../assets/spotify.png';
 import youtube from '../assets/youtube.png';
 import youtubemusic from '../assets/youtubemusic.png';
+import twitch from '../assets/twitch.png';
+import x from '../assets/x.png';
+import instagram from '../assets/instagram.png';
+import facebookimage from '../assets/facebook.png';
 
 const HomePage = () => {
   const { isAuthenticated } = useAuth0();
@@ -29,7 +33,7 @@ const HomePage = () => {
           alt="Home Page"
           style={{
             width: '100vw',
-            height: '100vw',
+            height: '50vw',
           }}
         />
         <Link to={`/pestilant-evocation`}>
@@ -37,7 +41,7 @@ const HomePage = () => {
             className="btn btn-danger"
             style={{
               position: 'absolute',
-              top: '20%',
+              top: '15%',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -103,6 +107,60 @@ const HomePage = () => {
               src={youtubemusic}
               style={{
                 width: '25vw',
+                height: 'auto',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
+        <br />
+        <Row>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={x}
+              style={{
+                width: '20vw',
+                height: 'auto',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={instagram}
+              style={{
+                width: '12vw',
+                verticalAlign: 'center',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
+        <Row>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={facebookimage}
+              style={{
+                width: '15vw',
+                height: 'auto',
+                position: 'absolute',
+                left: '25%',
+                //float: 'right'
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={twitch}
+              style={{
+                width: '20vw',
                 height: 'auto',
               }}
             />

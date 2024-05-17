@@ -12,10 +12,9 @@ const SplashPage = () => (
           src={splash}
           alt="Album Cover"
           style={{
-            maxWidth: '100%',
+            width: '100%',
             margin: '0 auto',
-            maxHeight: '100%',
-            display: 'flex',
+            height: '100vh',
           }}
         />
       </Link>

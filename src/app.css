@@ -38,3 +38,10 @@ body {
 .result-block-container .result-block {
   opacity: 1;
 }
+
+@media (max-width: 400px) {
+  .carousel {
+    width: auto;
+    height: auto;
+  }
+}

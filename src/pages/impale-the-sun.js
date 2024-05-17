@@ -26,67 +26,46 @@ const ImpaleTheSun = () => {
   ) : (
     <div>
       <div className="text-center">
-        <Carousel>
+        <Carousel
+          fade
+          slide={false}
+          interval={null}
+          indicators={false}
+          prevLabel=""
+          nextLabel=""
+        >
           <Carousel.Item>
-            <img
-              src={ImpaleCoverOne}
-              alt=""
-              style={{
-                //objectFit: 'cover',
-                width: '60%',
-                //height: '100vh',
-                margin: '0 auto',
-              }}
-            />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Lyrics</p>
-            </Carousel.Caption>
+            <img src={ImpaleCoverOne} className="flex w-50" />
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              src={ImpaleCoverTwo}
-              alt=""
-              style={{
-                //objectFit: 'cover',
-                width: '60%',
-                //height: '100vh',
-                margin: '0 auto',
-              }}
-            />
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Part 2 lyrics</p>
-            </Carousel.Caption>
+            <img src={ImpaleCoverTwo} alt="" className="flex w-50" />
           </Carousel.Item>
           <Carousel.Item>
             <Link to={`/pestilant-evocation`}>
-              <img
-                src={PestilantEvocationCover}
-                alt=""
-                style={{
-                  //objectFit: 'cover',
-                  width: '60%',
-                  //height: '100vh',
-                  margin: '0 auto',
-                }}
-              />
+              <img src={PestilantEvocationCover} alt="" className="flex w-50" />
             </Link>
-            <Carousel.Caption>
-              <h3>Click to go back to Pestilant Evocation</h3>
-            </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        {/* <img
-          className=""
-          src={impale}
-          alt="Splash Page"
+        <br />
+        <audio
+          controls
           style={{
-            objectFit: 'cover',
-            width: '100%',
+            maxWidth: '100%',
+            width: '90%',
             margin: '0 auto',
+            maxHeight: '100%',
+            display: 'flex',
           }}
-        /> */}
+        >
+          <source
+            src="https://filestoragehandoferis.blob.core.windows.net/test/ImpaleTheSun.mp3"
+            type="audio/mpeg"
+          ></source>
+          <source
+            src="https://filestoragehandoferis.blob.core.windows.net/test/ImpaleTheSun.mp3"
+            type="audio/ogg"
+          ></source>
+        </audio>
         <br />
         <br />
       </div>
