@@ -19,8 +19,7 @@ import { UserContext } from './assets/auth/authentication/user-context';
 import './App.css';
 
 import { Col, Container, Row } from 'react-bootstrap';
-import UserMenu from './components/user-menu';
-import BandLogo from './components/band-logo';
+import camo1 from './assets/camowaves1.jpg';
 
 const App = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
@@ -33,7 +32,17 @@ const App = () => {
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
     >
       <UserContext.Provider value={{ userInfo, setUser }}>
-        <Container fluid="xs">
+        <Container
+          fluid="xs"
+          style={{
+            backgroundImage: `url("${camo1}")`,
+            //maxWidth: '100%',
+            //backgroundSize: '',
+            backgroundRepeat: 'repeat',
+            // height: '100%',
+            // width: '100%'
+          }}
+        >
           <Router>
             <Main />
           </Router>

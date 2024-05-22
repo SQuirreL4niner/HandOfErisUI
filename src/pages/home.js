@@ -4,10 +4,10 @@ import { Redirect, Link } from 'react-router-dom';
 import { AuthConsumer } from '../assets/auth/authentication/user-context';
 
 import { useAuth0 } from '@auth0/auth0-react';
-import ReactPlayer from 'react-player';
 import DashboardPage from './dashboard';
 import { Col, Row } from 'react-bootstrap';
-import homeimage from '../assets/Eris_portal_ghosts_demons.png';
+import homeimage from '../assets/blupic3.png';
+import button from '../assets/button-01.png';
 import itunes from '../assets/itunes.png';
 import spotifiy from '../assets/spotify.png';
 import youtube from '../assets/youtube.png';
@@ -32,32 +32,34 @@ const HomePage = () => {
           src={homeimage}
           alt="Home Page"
           style={{
-            width: '100vw',
-            height: '50vw',
+            width: '70%',
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         />
         <Link to={`/pestilant-evocation`}>
-          <button
-            className="btn btn-danger"
+          <img
+            className=""
+            src={button}
             style={{
               position: 'absolute',
-              top: '15%',
+              top: '25%',
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: '8%',
-              width: '23%',
-              left: '38%',
+              // flexDirection: 'column',
+              // justifyContent: 'center',
+              // alignItems: 'center',
+              height: '4%',
+              width: '5%',
+              left: '48%',
               //marginBottom: '20px',
-              textAlign: 'center',
-              paddingLeft: '10px',
-              paddingRight: '10px',
-              fontSize: '4vw',
+              // textAlign: 'center',
+              // paddingLeft: '10px',
+              // paddingRight: '10px',
+              // fontSize: '4vw',
+              textAnchor: 'Newest Release',
             }}
-          >
-            Play Latest
-          </button>
+          />
         </Link>
         <br />
         <br />
@@ -69,8 +71,7 @@ const HomePage = () => {
               className=""
               src={spotifiy}
               style={{
-                width: '25vw',
-                height: 'auto',
+                width: '5vw',
               }}
             />
           </Col>
@@ -80,8 +81,7 @@ const HomePage = () => {
               className=""
               src={itunes}
               style={{
-                width: '25vw',
-                height: 'auto',
+                width: '5vw',
               }}
             />
           </Col>
@@ -95,8 +95,7 @@ const HomePage = () => {
               className=""
               src={youtube}
               style={{
-                width: '25vw',
-                height: 'auto',
+                width: '5vw',
               }}
             />
           </Col>
@@ -106,8 +105,7 @@ const HomePage = () => {
               className=""
               src={youtubemusic}
               style={{
-                width: '25vw',
-                height: 'auto',
+                width: '5vw',
               }}
             />
           </Col>
@@ -121,8 +119,7 @@ const HomePage = () => {
               className=""
               src={x}
               style={{
-                width: '20vw',
-                height: 'auto',
+                width: '5vw',
               }}
             />
           </Col>
@@ -132,8 +129,7 @@ const HomePage = () => {
               className=""
               src={instagram}
               style={{
-                width: '12vw',
-                verticalAlign: 'center',
+                width: '5vw',
               }}
             />
           </Col>
@@ -146,10 +142,7 @@ const HomePage = () => {
               className=""
               src={facebookimage}
               style={{
-                width: '15vw',
-                height: 'auto',
-                position: 'absolute',
-                left: '25%',
+                width: '5vw',
                 //float: 'right'
               }}
             />
@@ -160,8 +153,7 @@ const HomePage = () => {
               className=""
               src={twitch}
               style={{
-                width: '20vw',
-                height: 'auto',
+                width: '5vw',
               }}
             />
           </Col>
