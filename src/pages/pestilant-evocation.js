@@ -14,10 +14,11 @@ import DashboardPage from './dashboard';
 import { Col, Row } from 'react-bootstrap';
 import splash from '../assets/splash.png';
 import backcover from '../assets/back-cover.png';
-import impaleTitle from '../assets/impale-title.png';
-import sieTitle from '../assets/sie-title.png';
-import serpantsTitle from '../assets/serpants-title.png';
-import faithTitle from '../assets/faith-title.png';
+import faithtitle from '../assets/faithtext.png';
+import serpantstitle from '../assets/serpantstext.png';
+import impaletitle from '../assets/impaletext.png';
+import sietitle from '../assets/sietext.png';
+import cover from '../assets/cover-01.png';
 
 const PestilantEvocation = () => {
   const { isAuthenticated } = useAuth0();
@@ -30,80 +31,81 @@ const PestilantEvocation = () => {
     <div>
       <div className="text-center">
         <Row>
-          <Col className="col-sm-4">
-            <Row className="row h-25"></Row>
+          <Col className="col-sm-6">
             <Row className="row h-25">
-              <Link to={`/pestilant-evocation/impale-the-sun`}>
+              <Link to={`/pestilant-evocation/impale-the-sun`} className="link">
                 <img
-                  className="app-logo"
-                  src={impaleTitle}
+                  className="--hover-color: green"
+                  src={impaletitle}
                   alt="Splash Page"
                   style={{
                     //objectFit: 'cover',
-                    width: '100%',
+                    maxWidth: '45%',
                     //height: '100vh',
                     margin: '0 auto',
                   }}
                 />
               </Link>
             </Row>
-            <Row className="row h-25"></Row>
             <Row className="row h-25">
               <Link to={`/pestilant-evocation/impale-the-sun`}>
                 <img
                   className="app-logo"
-                  src={faithTitle}
+                  src={faithtitle}
                   alt="Splash Page"
                   style={{
-                    width: '100%',
+                    //objectFit: 'cover',
+                    maxWidth: '45%',
                     //height: '100vh',
                     margin: '0 auto',
                   }}
                 />
               </Link>
             </Row>
-          </Col>
-          <Col className="col-sm-4">
-            <Link to={`/pestilant-evocation/impale-the-sun`}>
-              <img
-                className="app-logo"
-                src={backcover}
-                alt="Splash Page"
-                style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  //height: '100vh',
-                  margin: '0 auto',
-                }}
-              />
-            </Link>
-          </Col>
-          <Col className="col-sm-4">
-            <Row className="row h-25"></Row>
             <Row className="row h-25">
-              <img
-                className="app-logo"
-                src={serpantsTitle}
-                alt="Splash Page"
-                style={{
-                  width: '100%',
-                  margin: '0 auto',
-                }}
-              />
+              <Link to={`/pestilant-evocation/impale-the-sun`}>
+                <img
+                  className="app-logo"
+                  src={serpantstitle}
+                  alt="Splash Page"
+                  style={{
+                    //objectFit: 'cover',
+                    maxWidth: '90%',
+                    //height: '100vh',
+                    margin: '0 auto',
+                  }}
+                />
+              </Link>
+            </Row>
+            <Row className="row h-25">
+              <Link to={`/pestilant-evocation/impale-the-sun`}>
+                <img
+                  className="app-logo"
+                  src={sietitle}
+                  alt="Splash Page"
+                  style={{
+                    //objectFit: 'cover',
+                    maxWidth: '45%',
+                    //height: '100vh',
+                    margin: '0 auto',
+                  }}
+                />
+              </Link>
             </Row>
             <Row className="row h-25"></Row>
-            <Row className="row h-25">
-              <img
-                className="app-logo"
-                src={sieTitle}
-                alt="Splash Page"
-                style={{
-                  width: '100%',
-                  //height: '100vh',
-                  margin: '0 auto',
-                }}
-              />
-            </Row>
+          </Col>
+          <Col className="col-sm-6">
+            <img
+              className="app-logo"
+              src={cover}
+              alt="Splash Page"
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                //height: '100vh',
+                margin: '0 auto',
+              }}
+            />
           </Col>
         </Row>
         <br />

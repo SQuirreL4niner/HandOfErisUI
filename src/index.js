@@ -32,17 +32,7 @@ const App = () => {
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
     >
       <UserContext.Provider value={{ userInfo, setUser }}>
-        <Container
-          fluid="xs"
-          style={{
-            backgroundImage: `url("${camo1}")`,
-            //maxWidth: '100%',
-            //backgroundSize: '',
-            backgroundRepeat: 'repeat',
-            // height: '100%',
-            // width: '100%'
-          }}
-        >
+        <Container fluid="xs" className="">
           <Router>
             <Main />
           </Router>

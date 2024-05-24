@@ -6,16 +6,18 @@ import { AuthConsumer } from '../assets/auth/authentication/user-context';
 import { useAuth0 } from '@auth0/auth0-react';
 import DashboardPage from './dashboard';
 import { Col, Row } from 'react-bootstrap';
-import homeimage from '../assets/blupic3.png';
+import homeimage from '../assets/blupic2.png';
 import button from '../assets/button-01.png';
-import itunes from '../assets/itunes.png';
+import itunes from '../assets/applemusic.svg';
 import spotifiy from '../assets/spotify.png';
 import youtube from '../assets/youtube.png';
 import youtubemusic from '../assets/youtubemusic.png';
-import twitch from '../assets/twitch.png';
+import twitch from '../assets/twitch5.png';
 import x from '../assets/x.png';
 import instagram from '../assets/instagram.png';
 import facebookimage from '../assets/facebook.png';
+import bandcamp from '../assets/bandcamp.png';
+import soundcloud from '../assets/soundcloud.png';
 
 const HomePage = () => {
   const { isAuthenticated } = useAuth0();
@@ -27,18 +29,49 @@ const HomePage = () => {
   ) : (
     <div>
       <div className="">
-        <img
-          className=""
-          src={homeimage}
-          alt="Home Page"
-          style={{
-            width: '70%',
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        />
-        <Link to={`/pestilant-evocation`}>
+        <Row>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-2 d-flex align-items-center justify-content-end">
+            <Link to={`/pestilant-evocation`}>
+              <img
+                src={button}
+                style={{ maxWidth: '50%', maxHeight: '50%' }}
+              ></img>
+            </Link>
+          </Col>
+          <Col className="col-sm-2 d-flex align-items-center justify-content-start">
+            <h4>Latest Release</h4>
+          </Col>
+          <Col className="col-sm-2 col-sm-2 d-flex align-items-center justify-content-end">
+            <Link to={`/pestilant-evocation`}>
+              <img
+                src={button}
+                style={{ maxWidth: '50%', maxHeight: '50%' }}
+              ></img>
+            </Link>
+          </Col>
+          <Col className="col-sm-2 d-flex align-items-center justify-content-start">
+            <h4>Release Video</h4>
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
+        <Row>
+          <Col className="d-flex align-items-center">
+            <img
+              className="bg-image-blend"
+              src={homeimage}
+              alt="Home Page"
+              style={{
+                maxWidth: '100%',
+                maxHeight: '90%',
+                display: 'block',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            />
+          </Col>
+        </Row>
+        {/* <Link to={`/pestilant-evocation`}>
           <img
             className=""
             src={button}
@@ -60,7 +93,7 @@ const HomePage = () => {
               textAnchor: 'Newest Release',
             }}
           />
-        </Link>
+        </Link> */}
         <br />
         <br />
         <br />
@@ -71,7 +104,7 @@ const HomePage = () => {
               className=""
               src={spotifiy}
               style={{
-                width: '5vw',
+                maxWidth: '15vw',
               }}
             />
           </Col>
@@ -81,12 +114,13 @@ const HomePage = () => {
               className=""
               src={itunes}
               style={{
-                width: '5vw',
+                maxWidth: '20vw',
               }}
             />
           </Col>
           <Col className="col-sm-2"></Col>
         </Row>
+        <br />
         <br />
         <Row>
           <Col className="col-sm-2"></Col>
@@ -95,22 +129,23 @@ const HomePage = () => {
               className=""
               src={youtube}
               style={{
-                width: '5vw',
+                maxWidth: '15vw',
               }}
             />
           </Col>
           <Col className="col-sm-2"></Col>
-          <Col className="col-sm-3">
+          <Col className="col-sm-3 align-items-center">
             <img
               className=""
               src={youtubemusic}
               style={{
-                width: '5vw',
+                maxWidth: '22vw',
               }}
             />
           </Col>
           <Col className="col-sm-2"></Col>
         </Row>
+        <br />
         <br />
         <Row>
           <Col className="col-sm-2"></Col>
@@ -119,7 +154,7 @@ const HomePage = () => {
               className=""
               src={x}
               style={{
-                width: '5vw',
+                maxWidth: '5vw',
               }}
             />
           </Col>
@@ -129,12 +164,14 @@ const HomePage = () => {
               className=""
               src={instagram}
               style={{
-                width: '5vw',
+                maxWidth: '5vw',
               }}
             />
           </Col>
           <Col className="col-sm-2"></Col>
         </Row>
+        <br />
+        <br />
         <Row>
           <Col className="col-sm-2"></Col>
           <Col className="col-sm-3">
@@ -142,8 +179,7 @@ const HomePage = () => {
               className=""
               src={facebookimage}
               style={{
-                width: '5vw',
-                //float: 'right'
+                maxWidth: '7vw',
               }}
             />
           </Col>
@@ -153,15 +189,38 @@ const HomePage = () => {
               className=""
               src={twitch}
               style={{
-                width: '5vw',
+                maxWidth: '8vw',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
+        <br />
+        <br />
+        <Row>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={bandcamp}
+              style={{
+                maxWidth: '25vw',
+              }}
+            />
+          </Col>
+          <Col className="col-sm-2"></Col>
+          <Col className="col-sm-3">
+            <img
+              className=""
+              src={soundcloud}
+              style={{
+                maxWidth: '35vw',
               }}
             />
           </Col>
           <Col className="col-sm-2"></Col>
         </Row>
       </div>
-      <br />
-      <br />
       <br />
     </div>
     //
