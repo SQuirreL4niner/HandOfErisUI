@@ -31,27 +31,28 @@ const HomePage = () => {
       <div className="">
         <Row>
           <Col className="col-sm-2"></Col>
-          <Col className="col-sm-2 d-flex align-items-center justify-content-end">
+          <Col className="col-sm-1 d-flex align-items-start justify-content-end">
             <Link to={`/pestilant-evocation`}>
               <img
                 src={button}
-                style={{ maxWidth: '50%', maxHeight: '50%' }}
+                style={{ maxWidth: '100%', maxHeight: '50%' }}
               ></img>
             </Link>
           </Col>
           <Col className="col-sm-2 d-flex align-items-center justify-content-start">
-            <h4>Latest Release</h4>
+            <p>Latest Release</p>
           </Col>
-          <Col className="col-sm-2 col-sm-2 d-flex align-items-center justify-content-end">
+          <Col className="col-sm-1"></Col>
+          <Col className="col-sm-1 d-flex align-items-start justify-content-end">
             <Link to={`/pestilant-evocation`}>
               <img
                 src={button}
-                style={{ maxWidth: '50%', maxHeight: '50%' }}
+                style={{ maxWidth: '100%', maxHeight: '50%' }}
               ></img>
             </Link>
           </Col>
           <Col className="col-sm-2 d-flex align-items-center justify-content-start">
-            <h4>Release Video</h4>
+            <p>Release Video</p>
           </Col>
           <Col className="col-sm-2"></Col>
         </Row>
@@ -209,12 +210,12 @@ const HomePage = () => {
             />
           </Col>
           <Col className="col-sm-2"></Col>
-          <Col className="col-sm-3">
+          <Col className="col-sm-3 align-items-start justify-content-center">
             <img
               className=""
               src={soundcloud}
               style={{
-                maxWidth: '35vw',
+                maxWidth: '30vw',
               }}
             />
           </Col>

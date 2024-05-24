@@ -31,81 +31,82 @@ const PestilantEvocation = () => {
     <div>
       <div className="text-center">
         <Row>
-          <Col className="col-sm-6">
-            <Row className="row h-25">
-              <Link to={`/pestilant-evocation/impale-the-sun`} className="link">
-                <img
-                  className="--hover-color: green"
-                  src={impaletitle}
-                  alt="Splash Page"
-                  style={{
-                    //objectFit: 'cover',
-                    maxWidth: '45%',
-                    //height: '100vh',
-                    margin: '0 auto',
-                  }}
-                />
-              </Link>
-            </Row>
-            <Row className="row h-25">
-              <Link to={`/pestilant-evocation/impale-the-sun`}>
-                <img
-                  className="app-logo"
-                  src={faithtitle}
-                  alt="Splash Page"
-                  style={{
-                    //objectFit: 'cover',
-                    maxWidth: '45%',
-                    //height: '100vh',
-                    margin: '0 auto',
-                  }}
-                />
-              </Link>
-            </Row>
-            <Row className="row h-25">
-              <Link to={`/pestilant-evocation/impale-the-sun`}>
-                <img
-                  className="app-logo"
-                  src={serpantstitle}
-                  alt="Splash Page"
-                  style={{
-                    //objectFit: 'cover',
-                    maxWidth: '90%',
-                    //height: '100vh',
-                    margin: '0 auto',
-                  }}
-                />
-              </Link>
-            </Row>
-            <Row className="row h-25">
-              <Link to={`/pestilant-evocation/impale-the-sun`}>
-                <img
-                  className="app-logo"
-                  src={sietitle}
-                  alt="Splash Page"
-                  style={{
-                    //objectFit: 'cover',
-                    maxWidth: '45%',
-                    //height: '100vh',
-                    margin: '0 auto',
-                  }}
-                />
-              </Link>
-            </Row>
-            <Row className="row h-25"></Row>
+          {/* <Col> */}
+          <img
+            className="app-logo"
+            src={cover}
+            alt="Splash Page"
+            style={{
+              maxWidth: '40%',
+              //height: '75%',
+              //height: '100vh',
+              margin: '0 auto',
+            }}
+          />
+          {/* </Col> */}
+        </Row>
+        <br />
+        <Row className="">
+          <Col>
+            <Link to={`/pestilant-evocation/impale-the-sun`} className="link">
+              <img
+                className="link"
+                src={impaletitle}
+                alt="Splash Page"
+                style={{
+                  maxWidth: '45%',
+                  margin: '0 auto',
+                }}
+              />
+            </Link>
           </Col>
-          <Col className="col-sm-6">
-            <img
-              className="app-logo"
-              src={cover}
-              alt="Splash Page"
-              style={{
-                objectFit: 'cover',
-                width: '100%',
-                //height: '100vh',
-                margin: '0 auto',
-              }}
-            />
+        </Row>
+        <br />
+        <Row className="">
+          <Col>
+            <Link to={`/pestilant-evocation/impale-the-sun`}>
+              <img
+                className=""
+                src={faithtitle}
+                alt="Splash Page"
+                style={{
+                  maxWidth: '45%',
+                  margin: '0 auto',
+                }}
+              />
+            </Link>
+          </Col>
+        </Row>
+        <br />
+        <Row className="row h-25">
+          <Col>
+            <Link to={`/pestilant-evocation/impale-the-sun`}>
+              <img
+                className="app-logo"
+                src={serpantstitle}
+                alt="Splash Page"
+                style={{
+                  maxWidth: '90%',
+                  margin: '0 auto',
+                }}
+              />
+            </Link>
+          </Col>
+        </Row>
+        <br />
+        <Row className="row h-25">
+          <Col>
+            <Link to={`/pestilant-evocation/impale-the-sun`}>
+              <img
+                className="app-logo"
+                src={sietitle}
+                alt="Splash Page"
+                style={{
+                  maxWidth: '40%',
+                  margin: '0 auto',
+                }}
+              />
+            </Link>
           </Col>
         </Row>
         <br />
