@@ -30,6 +30,7 @@ import BandLogo from '../components/band-logo';
 import ImpaleTheSun from './impale-the-sun';
 import PestilantEvocation from './pestilant-evocation';
 import Merch from './merch';
+import BiographyPage from './biography';
 
 const Main = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
@@ -38,11 +39,7 @@ const Main = () => {
     ? false
     : true;
 
-  return location.pathname === '/' ? (
-    <>
-      <SplashPage />
-    </>
-  ) : (
+  return (
     <>
       <Row>
         <Col xs={2} id="sidebar-wrapper">
@@ -58,12 +55,13 @@ const Main = () => {
       <Row className="justify-content-md-center">
         <Col xs={12}>
           <Routes>
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/callback" element={<Callback />} />
             <Route exact path="/dashboard" element={<DashboardPage />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route path="/discography" element={<Discography />} />
+            <Route path="/biography" element={<BiographyPage />} />
             <Route
               path="/pestilant-evocation"
               element={<PestilantEvocation />}

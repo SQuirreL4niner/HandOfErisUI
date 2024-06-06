@@ -38,12 +38,9 @@ const PestilantEvocation = () => {
             alt="Splash Page"
             style={{
               maxWidth: '40%',
-              //height: '75%',
-              //height: '100vh',
               margin: '0 auto',
             }}
           />
-          {/* </Col> */}
         </Row>
         <br />
         <Row className="">

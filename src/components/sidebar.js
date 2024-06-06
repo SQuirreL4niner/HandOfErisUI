@@ -112,12 +112,12 @@ const Sidebar = ({ props }) => {
         <Nav className="col-md-12 d-md-block">
           <div className="sidebar-sticky"></div>
           <Nav.Link
-            as={Link}
-            to="/home"
+            as={RouterNavLink}
+            to="/"
             exact
             eventKey="1"
             activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '10px' }}
+            style={{ margin: '0 auto', paddingLeft: '10px', color: 'white' }}
           >
             Home
           </Nav.Link>
@@ -125,19 +125,9 @@ const Sidebar = ({ props }) => {
             as={Link}
             to="/profile"
             exact
-            eventKey="2"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '10px' }}
-          >
-            Profile
-          </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/profile"
-            exact
             eventKey="3"
             activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '10px' }}
+            style={{ margin: '0 auto', paddingLeft: '10px', color: 'white' }}
           >
             Band
           </Nav.Link>
@@ -147,29 +137,19 @@ const Sidebar = ({ props }) => {
             exact
             eventKey="4"
             activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '10px' }}
+            style={{ margin: '0 auto', paddingLeft: '10px', color: 'white' }}
           >
             Releases
           </Nav.Link>
           <Nav.Link
             as={Link}
-            to="/pics"
+            to="/biography"
             exact
             eventKey="5"
             activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '10px' }}
+            style={{ margin: '0 auto', paddingLeft: '10px', color: 'white' }}
           >
-            Pics
-          </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/links"
-            exact
-            eventKey="5"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '10px' }}
-          >
-            Links
+            Biography
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

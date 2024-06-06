@@ -68,78 +68,16 @@ const UserMenu = () => {
       </Navbar.Collapse>
     </Navbar>
   ) : (
-    <Navbar
-      collapseOnSelect
-      expand={size}
-      variant="dark"
-      className="justify-content-end"
-    >
-      <Navbar.Toggle aria-controls="responsive-navbar-nav">
-        <span>
-          <MdPerson className="material-icons md-48" style={{ color: 'red' }} />
-        </span>
-      </Navbar.Toggle>
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="col-md-12 d-md-block">
-          <Nav.Link
-            as={RouterNavLink}
-            to="/merch"
-            exact
-            eventKey="2"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '200px' }}
-          >
-            <MdShoppingCart
-              className="material-icons md-36"
-              style={{ color: 'white' }}
-            />
-          </Nav.Link>
-          <Nav.Link
-            as={RouterNavLink}
-            to="/dashboard"
-            exact
-            eventKey="1"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '170px' }}
-          >
-            <Login />
-          </Nav.Link>
-          <Nav.Link
-            as={RouterNavLink}
-            to="/upload"
-            exact
-            eventKey="3"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '200px' }}
-          >
-            <MdAttachMoney
-              className="material-icons md-36"
-              style={{ color: 'white' }}
-            />
-          </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/dashboard"
-            exact
-            eventKey="4"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '170px' }}
-          >
-            YouTube
-          </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/dashboard"
-            exact
-            eventKey="5"
-            activeClassName="router-link-exact-active"
-            style={{ margin: '0 auto', paddingLeft: '170px' }}
-          >
-            Friends
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <>
+      {/* <span> */}
+      <MdPerson
+        className="material-icons md-48"
+        size={25}
+        style={{ color: 'red', marginLeft: '50%', marginTop: '16%' }}
+        // style={{  }}
+      />
+      {/* </span> */}
+    </>
   );
 };
 

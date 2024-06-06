@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthConsumer } from '../assets/auth/authentication/user-context';
@@ -12,12 +12,27 @@ import ReactPlayer from 'react-player';
 import User from '../components/user';
 import Logout from '../assets/auth/authentication/logout';
 import DashboardPage from './dashboard';
-import ImpaleCoverOne from '../assets/impale-1.png';
-import ImpaleCoverTwo from '../assets/impale1.png';
-import PestilantEvocationCover from '../assets/cover-01.png';
+import Impale1 from '../assets/impale-images/impale1.png';
+import Impale2 from '../assets/impale-images/impale2.png';
+import Impale3 from '../assets/impale-images/impale3.png';
+import Impale4 from '../assets/impale-images/impale4.png';
+import Impale5 from '../assets/impale-images/impale5.png';
+import Impale6 from '../assets/impale-images/impale6.png';
+import Impale7 from '../assets/impale-images/impale7.png';
+import Impale8 from '../assets/impale-images/impale8.png';
+import button1 from '../assets/button-01.png';
 
 const ImpaleTheSun = () => {
+  const [isOn, setSlideShow] = useState(true);
+  const [interval, setInterval] = useState(null);
   const { isAuthenticated } = useAuth0();
+  let slideShow = false;
+
+  function slideShowToggle() {
+    setSlideShow(!isOn);
+    let time = isOn ? 5000 : null;
+    setInterval(time);
+  }
 
   return isAuthenticated ? (
     <>
@@ -27,25 +42,55 @@ const ImpaleTheSun = () => {
     <div>
       <div className="text-center">
         <Carousel
-          fade
-          slide={false}
-          interval={null}
+          //slide={true}
+          interval={interval}
           indicators={false}
           prevLabel=""
           nextLabel=""
         >
           <Carousel.Item>
-            <img src={ImpaleCoverOne} className="flex w-50" />
+            <img src={Impale1} className="flex w-50" />
           </Carousel.Item>
           <Carousel.Item>
-            <img src={ImpaleCoverTwo} alt="" className="flex w-50" />
+            <img src={Impale3} alt="" className="flex w-50" />
           </Carousel.Item>
           <Carousel.Item>
+            <img src={Impale4} alt="" className="flex w-50" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={Impale2} alt="" className="flex w-50" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={Impale5} alt="" className="flex w-50" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={Impale6} alt="" className="flex w-50" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={Impale7} alt="" className="flex w-50" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={Impale8} alt="" className="flex w-50" />
+          </Carousel.Item>
+          {/* <Carousel.Item>
             <Link to={`/pestilant-evocation`}>
               <img src={PestilantEvocationCover} alt="" className="flex w-50" />
             </Link>
-          </Carousel.Item>
+          </Carousel.Item> */}
         </Carousel>
+        <Row>
+          <Col className="col-sm-1 d-flex align-items-start justify-content-end">
+            <img
+              src={button1}
+              onClick={slideShowToggle}
+              style={{ maxWidth: '75%', maxHeight: '75%' }}
+            ></img>
+          </Col>
+          <Col className="col-sm-2 d-flex align-items-center justify-content-start">
+            <p>Slideshow {isOn ? 'On' : 'Off'}</p>
+          </Col>
+          <Col className="col-sm-2"></Col>
+        </Row>
         <br />
         <audio
           controls
