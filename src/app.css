@@ -2,7 +2,7 @@ html,
 body {
   background-color: #000000;
   color: ghostwhite;
-  background-image: url('./assets/grid\ back.jpg');
+  background-image: url('./assets/gridback.jpg');
   background-size: 100vw 100vh;
   background-repeat: 'repeat';
   min-height: '100vh';
@@ -14,7 +14,7 @@ body {
   /* //bottom: '0px'; */
   /* min-height: calc('100vh - 34px');
   //padding-bottom: '60px'; */
-  /* background-blend-mode: 'lighten'; */
+  background-blend-mode: 'lighten';
 }
 
 .next-steps .fa-link {
@@ -115,5 +115,37 @@ a.link:active {
 }
 
 p {
-  font-size: max(14px, 2.1vmax);
+  font-size: calc(16px + 6 * ((100vw - 320px) / 500)) !important;
+}
+
+main-image {
+  color: 'red' !important;
+}
+
+/* phones */
+@media screen and (min-width: 200px) and (max-width: 767px) {
+  main-image {
+    color: 'red' !important;
+  }
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  main-image {
+    color: 'green' !important;
+  }
+}
+
+/* laptops */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  main-image {
+    color: 'yellow' !important;
+  }
+}
+
+/* desktops */
+@media screen and (min-width: 1200px) {
+  main-image {
+    color: 'orange' !important;
+  }
 }

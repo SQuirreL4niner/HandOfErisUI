@@ -5,7 +5,7 @@ import logo from '../assets/logo.png';
 
 const BandLogo = () => (
   <div className="text-center">
-    <Link to={`/home`}>
+    <Link to={`/`}>
       <img
         className="app-logo"
         src={logo}

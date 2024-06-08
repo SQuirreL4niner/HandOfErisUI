@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useContext } from 'react';
+import React, { useState, useMemo, useContext, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -12,6 +12,8 @@ import Navbar from './components/navbar';
 import Sidebar from './components/sidebar';
 import Footer from './components/footer';
 import Main from './pages/main';
+import logo from './assets/logo.png';
+//import gridBackground from './assets/grid back.jpg';
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserContext } from './assets/auth/authentication/user-context';
@@ -19,12 +21,18 @@ import { UserContext } from './assets/auth/authentication/user-context';
 import './App.css';
 
 import { Col, Container, Row } from 'react-bootstrap';
-import camo1 from './assets/camowaves1.jpg';
+import splash from './components/band-logo';
 
 const App = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
+  const [splash, setSplash] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setSplash(false);
+    }, 5000);
+  }, []);
 
-  return (
+  return !splash ? (
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
@@ -39,6 +47,36 @@ const App = () => {
         </Container>
       </UserContext.Provider>
     </Auth0Provider>
+  ) : (
+    <div
+      style={{
+        width: '100%',
+        margin: '0 auto',
+        height: '100vh',
+        backgroundColor: 'black',
+        backgroundSize: '100vw 100vh',
+        //backgroundRepeat: 'repeat',
+        minHeight: '100vh',
+        /* display: 'flex'; */
+        //flexDirection: 'column'
+      }}
+    >
+      <img
+        className="app-logo"
+        src={logo}
+        alt="Album Cover"
+        style={{
+          maxWidth: '80%',
+          top: '30%',
+          left: '10%',
+          position: 'absolute',
+          // margin: '0 auto',
+          // marginLeft: 'auto',
+          // marginRight: 'auto',
+          display: 'block',
+        }}
+      />
+    </div>
   );
 };
 

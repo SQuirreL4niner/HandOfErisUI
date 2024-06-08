@@ -20,6 +20,8 @@ import facebookimage from '../assets/facebook.png';
 import bandcamp from '../assets/bandcamp.png';
 import soundcloud from '../assets/soundcloud.png';
 
+import '.././App.css';
+
 const HomePage = () => {
   const { isAuthenticated } = useAuth0();
 
@@ -56,16 +58,16 @@ const HomePage = () => {
         <img
           src={button}
           style={{
-            //width: '5vw',
             position: 'absolute',
-            top: '28%',
+            top: '30%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             height: '7%',
-            width: '10%',
+            width: '11%',
             left: '20%',
+            objectFit: 'contain',
             //marginBottom: '20px',
             textAlign: 'center',
             paddingLeft: '10px',
@@ -74,6 +76,7 @@ const HomePage = () => {
           }}
         ></img>
         <p
+          className="main-image"
           style={{
             //width: '5vw',
             position: 'absolute',
@@ -90,6 +93,7 @@ const HomePage = () => {
             paddingLeft: '10px',
             paddingRight: '10px',
             fontSize: '4vw',
+            color: 'ghostwhite',
           }}
         >
           EP
@@ -107,14 +111,15 @@ const HomePage = () => {
           style={{
             //width: '5vw',
             position: 'absolute',
-            top: '28%',
+            top: '30%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             height: '7%',
-            width: '10%',
-            left: '70%',
+            width: '11%',
+            left: '68%',
+            objectFit: 'contain',
             //marginBottom: '20px',
             textAlign: 'center',
             paddingLeft: '10px',
@@ -123,6 +128,7 @@ const HomePage = () => {
           }}
         ></img>
         <p
+          className="mainImage"
           style={{
             //width: '5vw',
             position: 'absolute',
@@ -133,12 +139,13 @@ const HomePage = () => {
             alignItems: 'center',
             height: '7%',
             width: '13%',
-            left: '68%',
+            left: '67%',
             //marginBottom: '20px',
             textAlign: 'center',
             paddingLeft: '10px',
             paddingRight: '10px',
             fontSize: '4vw',
+            color: 'ghostwhite',
           }}
         >
           Video
