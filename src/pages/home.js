@@ -5,7 +5,7 @@ import { AuthConsumer } from '../assets/auth/authentication/user-context';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import DashboardPage from './dashboard';
-import { Col, Row, Table } from 'react-bootstrap';
+import { Col, Image, Row, Table } from 'react-bootstrap';
 import homeimage from '../assets/blupic2.png';
 import testhome from '../assets/blu6-01.png';
 import button from '../assets/button-01.png';
@@ -30,233 +30,230 @@ const HomePage = () => {
       <DashboardPage />
     </>
   ) : (
-    <div>
-      <Row>
-        <Col className="d-flex align-items-center">
-          <div class="container-sm">
-            <img
-              className="bg-image-blend"
-              src={testhome}
-              alt="Home Page"
-              style={{
-                maxWidth: '100%',
-                maxHeight: '80%',
-                display: 'block',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            />
-          </div>
-        </Col>
-      </Row>
+    <>
+      <div className="mb-sm-5 mb-lg-5">
+        <Row>
+          <Col className="align-items-center">
+            <div class="text-center">
+              <img
+                className="mr-auto d-block"
+                src={testhome}
+                alt="Home Page"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '80%',
+                  display: 'block',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                }}
+              />
+            </div>
+          </Col>
+        </Row>
+        <Link to={`/pestilant-evocation`}>
+          <img
+            src={button}
+            className="mt-lg-5"
+            style={{
+              position: 'absolute',
+              top: '35%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '7%',
+              width: '11%',
+              left: '20%',
+              objectFit: 'contain',
+              textAlign: 'center',
+              paddingLeft: '10px',
+              paddingRight: '10px',
+              fontSize: '4vw',
+            }}
+          ></img>
+          <p
+            className="mt-lg-5"
+            style={{
+              position: 'absolute',
+              top: '41%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '7%',
+              width: '13%',
+              left: '19%',
+              textAlign: 'center',
+              paddingLeft: '10px',
+              paddingRight: '10px',
+              fontSize: '4vw',
+              color: 'ghostwhite',
+            }}
+          >
+            EP
+          </p>
+        </Link>
+        <Link to={`/pestilant-evocation`}>
+          <img
+            className="mt-lg-5"
+            src={button}
+            style={{
+              position: 'absolute',
+              top: '35%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '7%',
+              width: '11%',
+              left: '69%',
+              objectFit: 'contain',
+              textAlign: 'center',
+              paddingLeft: '10px',
+              paddingRight: '10px',
+              fontSize: '4vw',
+            }}
+          ></img>
+          <p
+            className="pt-sm-4 mt-lg-5"
+            style={{
+              position: 'absolute',
+              top: '40%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '7%',
+              width: '13%',
+              left: '68%',
+              textAlign: 'center',
+              paddingLeft: '10px',
+              paddingRight: '10px',
+              fontSize: '4vw',
+              color: 'ghostwhite',
+            }}
+          >
+            Video
+          </p>
+        </Link>
+      </div>
       <br />
-
-      {/* <Row>
-        <Col className="col-lg-2"></Col>
-        <Col className="col-lg-2 d-flex align-items-start justify-content-end"> */}
-      <Link to={`/pestilant-evocation`}>
-        <img
-          src={button}
-          style={{
-            position: 'absolute',
-            top: '30%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '7%',
-            width: '11%',
-            left: '20%',
-            objectFit: 'contain',
-            //marginBottom: '20px',
-            textAlign: 'center',
-            paddingLeft: '10px',
-            paddingRight: '10px',
-            fontSize: '4vw',
-          }}
-        ></img>
-        <p
-          className="main-image"
-          style={{
-            //width: '5vw',
-            position: 'absolute',
-            top: '35%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '7%',
-            width: '13%',
-            left: '19%',
-            //marginBottom: '20px',
-            textAlign: 'center',
-            paddingLeft: '10px',
-            paddingRight: '10px',
-            fontSize: '4vw',
-            color: 'ghostwhite',
-          }}
-        >
-          EP
-        </p>
-      </Link>
-      {/* </Col>
-        <Col className="col-lg-1 d-flex align-items-center justify-content-end"> */}
-      {/* <Link to={`/pestilant-evocation`}>
-        <p style={{ color: 'ghostWhite' }}>EP</p>
-      </Link> */}
-
-      <Link to={`/pestilant-evocation`}>
-        <img
-          src={button}
-          style={{
-            //width: '5vw',
-            position: 'absolute',
-            top: '30%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '7%',
-            width: '11%',
-            left: '68%',
-            objectFit: 'contain',
-            //marginBottom: '20px',
-            textAlign: 'center',
-            paddingLeft: '10px',
-            paddingRight: '10px',
-            fontSize: '4vw',
-          }}
-        ></img>
-        <p
-          className="mainImage"
-          style={{
-            //width: '5vw',
-            position: 'absolute',
-            top: '35%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '7%',
-            width: '13%',
-            left: '67%',
-            //marginBottom: '20px',
-            textAlign: 'center',
-            paddingLeft: '10px',
-            paddingRight: '10px',
-            fontSize: '4vw',
-            color: 'ghostwhite',
-          }}
-        >
-          Video
-        </p>
-      </Link>
-      <br />
-      <br />
+      <div class="row mb-lg-5"></div>
       <Table className="table">
-        <Row className="mx-3">
-          <Col className="col-md-3 align-items-end justify-content-center">
-            <img
-              className=""
+        <Row className="mx-2 pt-sm-5 pt-lg-5">
+          <Col className="col-sm-3 m-auto">
+            <Image
+              fluid
+              className="d-block mx-auto my-auto"
               src={spotifiy}
               style={{
-                maxWidth: '14vw',
+                maxWidth: '40%',
+                minWidth: '3em',
               }}
             />
           </Col>
-          <Col className="col-md-3 align-items-center justify-content-end">
-            <img
-              className=""
+          <Col className="col-sm-3 m-auto">
+            <Image
+              className="d-block mx-auto my-auto"
               src={itunes}
               style={{
-                maxWidth: '14vw',
+                maxWidth: '50%',
+                minWidth: '3em',
               }}
             />
           </Col>
-          <Col className="col-md-3 align-items-center justify-content-start">
-            <img
-              className=""
+          <Col className="col-sm-3 m-auto">
+            <Image
+              className="d-block mx-auto my-auto"
               src={youtube}
               style={{
-                maxWidth: '14vw',
+                maxWidth: '35%',
+                minWidth: '2.5em',
               }}
             />
           </Col>
-          <Col className="col-md-3 align-items-center justify-content-center">
-            <img
-              className=""
+          <Col className="col-sm-3 m-auto">
+            <Image
+              className="d-block mx-auto my-auto"
               src={youtubemusic}
               style={{
-                maxWidth: '18vw',
+                maxWidth: '50%',
+                minWidth: '3em',
               }}
             />
           </Col>
         </Row>
-        <Row className="mx-3 mt-4 d-flex flex-row">
-          <Col className="col-sm-3 align-items-center justify-content-center">
+        <br />
+        <Row className="pt-sm-2 pt-lg-5 mx-2">
+          <Col className="col-sm-3 m-auto">
             <img
-              className=""
+              className="d-block mx-auto my-auto"
               src={x}
               style={{
-                maxWidth: '5vw',
+                maxWidth: '12%',
+                minWidth: '1em',
               }}
             />
           </Col>
-          <Col className="col-sm-3 align-items-center justify-content-center">
+          <Col className="col-sm-3 m-auto">
             <img
-              className=""
+              className="d-block mx-auto my-auto"
               src={instagram}
               style={{
-                maxWidth: '5vw',
+                maxWidth: '12%',
+                minWidth: '1em',
               }}
             />
           </Col>
-          <Col className="col-sm-3 align-items-center justify-content-center">
+          <Col className="col-sm-3 m-auto">
             <img
-              className=""
+              className="d-block mx-auto my-auto"
               src={facebookimage}
               style={{
-                maxWidth: '5vw',
+                maxWidth: '12%',
+                minWidth: '1em',
               }}
             />
           </Col>
-          <Col className="col-sm-3 align-items-center justify-content-center">
+          <Col className="col-sm-3 m-auto">
             <img
-              className=""
+              className="d-block mx-auto my-auto"
               src={twitch}
               style={{
-                maxWidth: '5vw',
+                maxWidth: '12%',
+                minWidth: '1em',
               }}
             />
           </Col>
         </Row>
-        <Row className="mx-auto mt-4 d-flex flex-row">
-          <Col className="col-lg-3"></Col>
-          <Col className="col-lg-2 d-flex align-items-center justify-content-center">
+        <br />
+        <Row className="p-2 pt-lg-5  pb-lg-5 mx-2">
+          <Col className="col-sm-3"></Col>
+          <Col className="col-lg-2 m-auto">
             <img
-              className=""
+              className="d-block mx-auto my-auto"
               src={bandcamp}
               style={{
                 maxWidth: '15vw',
               }}
             />
           </Col>
-          <Col className="col-lg-2"></Col>
-          <Col className="col-lg-2 d-flex align-items-center justify-content-center">
+          <Col className="col-lg-2 m-auto"></Col>
+          <Col className="col-lg-2 m-auto">
             <img
-              className=""
+              className="d-block mx-auto my-auto"
               src={soundcloud}
               style={{
                 maxWidth: '15vw',
               }}
             />
           </Col>
-          <Col className="col-lg-3"></Col>
+          <Col className="col-sm-3 m-auto"></Col>
         </Row>
       </Table>
       <br />
-    </div>
-    //
+      {/* </div> */}
+    </>
   );
 };
 

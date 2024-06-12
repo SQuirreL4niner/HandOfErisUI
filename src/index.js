@@ -13,6 +13,7 @@ import Sidebar from './components/sidebar';
 import Footer from './components/footer';
 import Main from './pages/main';
 import logo from './assets/logo.png';
+import logoanimation from './assets/logoanimation1.gif';
 //import gridBackground from './assets/grid back.jpg';
 
 import { Auth0Provider } from '@auth0/auth0-react';
@@ -22,6 +23,7 @@ import './App.css';
 
 import { Col, Container, Row } from 'react-bootstrap';
 import splash from './components/band-logo';
+import camowaves from './assets/camowaves1.jpg';
 
 const App = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
@@ -29,7 +31,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setSplash(false);
-    }, 5000);
+    }, 2000);
   }, []);
 
   return !splash ? (
@@ -53,7 +55,8 @@ const App = () => {
         width: '100%',
         margin: '0 auto',
         height: '100vh',
-        backgroundColor: 'black',
+        // backgroundColor: 'black',
+        backgroundImage: `url('${camowaves}')`,
         backgroundSize: '100vw 100vh',
         //backgroundRepeat: 'repeat',
         minHeight: '100vh',
@@ -63,12 +66,12 @@ const App = () => {
     >
       <img
         className="app-logo"
-        src={logo}
+        src={logoanimation}
         alt="Album Cover"
         style={{
           maxWidth: '80%',
           top: '30%',
-          left: '10%',
+          left: '30%',
           position: 'absolute',
           // margin: '0 auto',
           // marginLeft: 'auto',
@@ -76,6 +79,7 @@ const App = () => {
           display: 'block',
         }}
       />
+      New EP and EP Video out now!!!
     </div>
   );
 };

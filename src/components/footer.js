@@ -1,6 +1,7 @@
 import React from 'react';
 
 import metal from '../assets/metal.png';
+import { Image } from 'react-bootstrap';
 
 const test = process.env.REACT_APP_CONFIG_TEST;
 
@@ -16,7 +17,11 @@ const Footer = () => (
       //position: 'absolute'
     }}
   >
-    <img src={metal} alt="metal" />
+    <Image
+      src={metal}
+      alt="metal"
+      style={{ minHeight: '1em', maxHeight: '1.5em' }}
+    />
     <p>Made with Metal</p>
   </div>
 );

@@ -68,16 +68,61 @@ const UserMenu = () => {
       </Navbar.Collapse>
     </Navbar>
   ) : (
-    <>
-      {/* <span> */}
-      <MdPerson
-        className="material-icons md-48"
-        size={25}
-        style={{ color: 'red', marginLeft: '50%', marginTop: '16%' }}
-        // style={{  }}
-      />
-      {/* </span> */}
-    </>
+    <Navbar
+      collapseOnSelect
+      expand={size}
+      variant="dark"
+      className="px-1"
+      style={{ right: '30px' }}
+    >
+      <Navbar.Toggle aria-controls="responsive-navbar-nav">
+        <span>
+          <MdPerson className="material-icons md-48" style={{ color: 'red' }} />
+        </span>
+      </Navbar.Toggle>
+      <Navbar.Collapse className="" id="responsive-navbar-nav">
+        <Nav className="d-flex ml-auto d-sm-block">
+          <Nav.Link
+            as={RouterNavLink}
+            to="/dashboard"
+            exact
+            activeClassName="router-link-exact-active"
+            style={{ margin: '0 auto', color: 'white' }}
+          >
+            <Login />
+          </Nav.Link>
+          <Nav.Link
+            as={RouterNavLink}
+            to="/profile"
+            exact
+            className="align-items-center"
+            activeClassName="router-link-exact-active"
+            style={{ margin: '0 auto', color: 'white' }}
+          >
+            Merch
+          </Nav.Link>
+          <Nav.Link
+            as={RouterNavLink}
+            to="/profile"
+            exact
+            className=""
+            activeClassName="router-link-exact-active"
+            style={{ margin: '0 auto', color: 'white' }}
+          >
+            News
+          </Nav.Link>
+          <Nav.Link
+            as={RouterNavLink}
+            to="/upload"
+            exact
+            activeClassName="router-link-exact-active"
+            style={{ margin: '0 auto', color: 'white' }}
+          >
+            Links
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 

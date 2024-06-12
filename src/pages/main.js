@@ -31,6 +31,7 @@ import ImpaleTheSun from './impale-the-sun';
 import PestilantEvocation from './pestilant-evocation';
 import Merch from './merch';
 import BiographyPage from './biography';
+import BandLogoPlaceholder from '../components/band-logo-placeholder';
 
 const Main = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
@@ -46,7 +47,7 @@ const Main = () => {
           <Sidebar />
         </Col>
         <Col xs={8} id="">
-          {showLogo ? <BandLogo /> : <></>}
+          {showLogo ? <BandLogo /> : <BandLogoPlaceholder />}
         </Col>
         <Col xs={2}>
           <UserMenu />
