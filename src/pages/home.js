@@ -93,7 +93,7 @@ const HomePage = () => {
             EP
           </p>
         </Link>
-        <Link to={`/pestilant-evocation`}>
+        <a href="https://youtu.be/8WFYMLMVgq0?si=ivITlnbfYwY_m9rE">
           <img
             className="mt-lg-5"
             src={button}
@@ -135,7 +135,7 @@ const HomePage = () => {
           >
             Video
           </p>
-        </Link>
+        </a>
       </div>
       <br />
       <div class="row mb-lg-5"></div>
@@ -163,14 +163,16 @@ const HomePage = () => {
             />
           </Col>
           <Col className="col-sm-3 m-auto">
-            <Image
-              className="d-block mx-auto my-auto"
-              src={youtube}
-              style={{
-                maxWidth: '35%',
-                minWidth: '2.5em',
-              }}
-            />
+            <a href="https://www.youtube.com/@hand_of_eris">
+              <Image
+                className="d-block mx-auto my-auto"
+                src={youtube}
+                style={{
+                  maxWidth: '35%',
+                  minWidth: '2.5em',
+                }}
+              />
+            </a>
           </Col>
           <Col className="col-sm-3 m-auto">
             <Image
@@ -230,23 +232,27 @@ const HomePage = () => {
         <Row className="p-2 pt-lg-5  pb-lg-5 mx-2">
           <Col className="col-sm-3"></Col>
           <Col className="col-lg-2 m-auto">
-            <img
-              className="d-block mx-auto my-auto"
-              src={bandcamp}
-              style={{
-                maxWidth: '15vw',
-              }}
-            />
+            <a href="https://handoferis.bandcamp.com/album/pestilent-evocation">
+              <img
+                className="d-block mx-auto my-auto"
+                src={bandcamp}
+                style={{
+                  maxWidth: '15vw',
+                }}
+              />
+            </a>
           </Col>
           <Col className="col-lg-2 m-auto"></Col>
           <Col className="col-lg-2 m-auto">
-            <img
-              className="d-block mx-auto my-auto"
-              src={soundcloud}
-              style={{
-                maxWidth: '15vw',
-              }}
-            />
+            <a href="https://soundcloud.com/user-165647041">
+              <img
+                className="d-block mx-auto my-auto"
+                src={soundcloud}
+                style={{
+                  maxWidth: '15vw',
+                }}
+              />
+            </a>
           </Col>
           <Col className="col-sm-3 m-auto"></Col>
         </Row>

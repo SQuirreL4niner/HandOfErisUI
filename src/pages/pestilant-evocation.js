@@ -18,7 +18,7 @@ import faithtitle from '../assets/faithtext.png';
 import serpantstitle from '../assets/serpantstext.png';
 import impaletitle from '../assets/impaletext.png';
 import sietitle from '../assets/sietext.png';
-import cover from '../assets/cover-01.png';
+import cover from '../assets/cover-spell-01.png';
 
 const PestilantEvocation = () => {
   const { isAuthenticated } = useAuth0();
@@ -61,10 +61,10 @@ const PestilantEvocation = () => {
         <br />
         <Row className="">
           <Col>
-            <Link to={`/pestilant-evocation/impale-the-sun`}>
+            <Link to={`/pestilant-evocation/sie-sind-hier`} className="link">
               <img
                 className=""
-                src={faithtitle}
+                src={sietitle}
                 alt="Splash Page"
                 style={{
                   maxWidth: '45%',
@@ -96,7 +96,7 @@ const PestilantEvocation = () => {
             <Link to={`/pestilant-evocation/impale-the-sun`}>
               <img
                 className="app-logo"
-                src={sietitle}
+                src={faithtitle}
                 alt="Splash Page"
                 style={{
                   maxWidth: '40%',

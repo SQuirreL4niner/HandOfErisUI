@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import cover from '../assets/cover-01.png';
+import cover from '../assets/cover-spell-01.png';
 import nirubucat from '../assets/ep cover fb-01.jpg';
 import twelth from '../assets/front background-01.jpg';
 
@@ -11,7 +11,7 @@ const DiscographyPage = () => {
       <br />
       <br />
       <div className="text-center">
-        <Link to={`/impale-the-sun`}>
+        <Link to={`/pestilant-evocation`}>
           <img
             className=""
             src={cover}

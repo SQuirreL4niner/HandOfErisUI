@@ -78,6 +78,7 @@ const ImpaleTheSun = () => {
             </Link>
           </Carousel.Item> */}
         </Carousel>
+        <br />
         <Row>
           <Col className="col-sm-1 d-flex align-items-start justify-content-end">
             <img

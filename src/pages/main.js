@@ -17,6 +17,7 @@ import Navbar from '../components/navbar';
 import Sidebar from '../components/sidebar';
 import SplashPage from './splash';
 import Footer from '../components/footer';
+import BandPics from '../pages/band-pics';
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserContext } from '../assets/auth/authentication/user-context';
@@ -32,6 +33,7 @@ import PestilantEvocation from './pestilant-evocation';
 import Merch from './merch';
 import BiographyPage from './biography';
 import BandLogoPlaceholder from '../components/band-logo-placeholder';
+import SieSindHier from './sie-sind-hier';
 
 const Main = () => {
   const [userInfo, setUser] = useState({ role: 'visitor', accessToken: '' });
@@ -63,6 +65,7 @@ const Main = () => {
             <Route exact path="/profile" element={<Profile />} />
             <Route path="/discography" element={<Discography />} />
             <Route path="/biography" element={<BiographyPage />} />
+            <Route path="/pics" element={<BandPics />} />
             <Route
               path="/pestilant-evocation"
               element={<PestilantEvocation />}
@@ -70,6 +73,10 @@ const Main = () => {
             <Route
               path="/pestilant-evocation/impale-the-sun"
               element={<ImpaleTheSun />}
+            />
+            <Route
+              path="/pestilant-evocation/sie-sind-hier"
+              element={<SieSindHier />}
             />
             <Route path="/merch" element={<Merch />} />
           </Routes>

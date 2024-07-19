@@ -2,19 +2,9 @@ import React, { useState, useMemo, useContext, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import HomePage from './pages/home';
-import Callback from './assets/auth/authentication/callback';
-import DashboardPage from './pages/dashboard';
-import UploadPage from './pages/upload';
-import SplashPage from './pages/splash';
-import Profile from './pages/profile';
-import Navbar from './components/navbar';
-import Sidebar from './components/sidebar';
-import Footer from './components/footer';
 import Main from './pages/main';
-import logo from './assets/logo.png';
-import logoanimation from './assets/logoanimation1.gif';
-//import gridBackground from './assets/grid back.jpg';
+import logoanimation from './assets/logo-moshed-06-14-19-54-12-936.gif';
+import logoanimate6 from './assets/logoanimate7.gif';
 
 import { Auth0Provider } from '@auth0/auth0-react';
 import { UserContext } from './assets/auth/authentication/user-context';
@@ -31,7 +21,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setSplash(false);
-    }, 2000);
+    }, 3000);
   }, []);
 
   return !splash ? (
@@ -50,37 +40,56 @@ const App = () => {
       </UserContext.Provider>
     </Auth0Provider>
   ) : (
-    <div
-      style={{
-        width: '100%',
-        margin: '0 auto',
-        height: '100vh',
-        // backgroundColor: 'black',
-        backgroundImage: `url('${camowaves}')`,
-        backgroundSize: '100vw 100vh',
-        //backgroundRepeat: 'repeat',
-        minHeight: '100vh',
-        /* display: 'flex'; */
-        //flexDirection: 'column'
-      }}
-    >
-      <img
-        className="app-logo"
-        src={logoanimation}
-        alt="Album Cover"
+    <>
+      <div
         style={{
-          maxWidth: '80%',
-          top: '30%',
-          left: '30%',
-          position: 'absolute',
-          // margin: '0 auto',
-          // marginLeft: 'auto',
-          // marginRight: 'auto',
-          display: 'block',
+          width: '100%',
+          margin: '0 auto',
+          height: '100vh',
+          backgroundImage: `url('${camowaves}')`,
+          backgroundSize: '100vw 100vh',
+          //minHeight: '100vh',
         }}
-      />
-      New EP and EP Video out now!!!
-    </div>
+      ></div>
+      <div
+        style={{
+          justifyContent: 'center',
+          display: 'flex',
+        }}
+      >
+        <p
+          className="justify-content-md-center"
+          style={{
+            position: 'absolute',
+            top: '20%',
+            fontWeight: 'bolder',
+          }}
+        >
+          New EP and EP Video out now!!!
+        </p>
+      </div>
+      <div
+        style={{
+          width: '100%',
+          margin: '0 auto',
+          height: '100vh',
+          overflow: 'hidden',
+          justifyContent: 'center',
+          display: 'flex',
+        }}
+      >
+        <img
+          src={logoanimate6}
+          alt="Album Cover"
+          style={{
+            top: '30%',
+            position: 'absolute',
+            maxWidth: '80%',
+            margin: 'auto',
+          }}
+        />
+      </div>
+    </>
   );
 };
 

@@ -123,7 +123,7 @@ const Sidebar = ({ props }) => {
           </Nav.Link>
           <Nav.Link
             as={Link}
-            to="/profile"
+            to="/pics"
             exact
             eventKey="3"
             activeClassName="router-link-exact-active"
